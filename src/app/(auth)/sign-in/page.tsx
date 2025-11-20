@@ -3,10 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { FormInput } from "@/feature/auth/form-input";
 import { PasswordInput } from "@/feature/auth/password-input";
+import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import * as z from "zod";
 
 const signInSchema = z.object({
@@ -17,6 +20,9 @@ const signInSchema = z.object({
 type SignInFormData = z.infer<typeof signInSchema>;
 
 export default function SignInPage() {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -25,12 +31,26 @@ export default function SignInPage() {
     resolver: zodResolver(signInSchema),
   });
 
-  const onSubmit = (data: SignInFormData) => {
-    console.log(data);
-    // signIn("credentials", {
-    //   email: data.email,
-    //   password: data.password,
-    // });
+  const onSubmit = async (data: SignInFormData) => {
+    setIsLoading(true);
+    try {
+      const result = await authClient.signIn.email({
+        email: data.email,
+        password: data.password,
+      });
+
+      if (result.error) {
+        toast.error(result.error.message || "Failed to sign in");
+        return;
+      }
+
+      toast.success("Successfully signed in!");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "An error occurred");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -61,9 +81,10 @@ export default function SignInPage() {
       {/* Sign In Button */}
       <Button
         type="submit"
-        className="w-full h-12 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-semibold rounded-xl transition-colors"
+        disabled={isLoading}
+        className="w-full h-12 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-semibold rounded-xl transition-colors disabled:opacity-50"
       >
-        Sign In
+        {isLoading ? "Signing in..." : "Sign In"}
       </Button>
 
       {/* Sign Up Link */}

@@ -3,31 +3,56 @@
 import { Button } from "@/components/ui/button";
 import { FormInput } from "@/feature/auth/form-input";
 import { PasswordInput } from "@/feature/auth/password-input";
+import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import * as z from "zod";
 
-const signInSchema = z.object({
+const signUpSchema = z.object({
   full_name: z.string().min(1, "Full name is required"),
   email: z.string().email("Please enter a valid email address"),
-  password: z.string().min(1, "Password is required"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
-type SignInFormData = z.infer<typeof signInSchema>;
+type SignUpFormData = z.infer<typeof signUpSchema>;
 
-export default function SignInPage() {
+export default function SignUpPage() {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignInFormData>({
-    resolver: zodResolver(signInSchema),
+  } = useForm<SignUpFormData>({
+    resolver: zodResolver(signUpSchema),
   });
 
-  const onSubmit = (data: SignInFormData) => {
-    // Design only - no functionality
-    console.log("Form data:", data);
+  const onSubmit = async (data: SignUpFormData) => {
+    setIsLoading(true);
+    try {
+      const result = await authClient.signUp.email({
+        email: data.email,
+        password: data.password,
+        name: data.full_name,
+      });
+
+      if (result.error) {
+        toast.error(result.error.message || "Failed to create account");
+        return;
+      }
+
+      toast.success("Account created successfully!");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "An error occurred");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -56,27 +81,23 @@ export default function SignInPage() {
         error={errors.password}
       />
 
-      {/* Forgot Password Link */}
-      <div className="text-sm text-[#6B7280]">
-        Forgot password?{" "}
-        <Link href="#" className="text-[#4F46E5] font-medium hover:underline">
-          Reset Here
-        </Link>
-      </div>
-
-      {/* Sign In Button */}
+      {/* Sign Up Button */}
       <Button
         type="submit"
-        className="w-full h-12 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-semibold rounded-xl transition-colors"
+        disabled={isLoading}
+        className="w-full h-12 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-semibold rounded-xl transition-colors disabled:opacity-50"
       >
-        Sign In
+        {isLoading ? "Creating account..." : "Sign Up"}
       </Button>
 
-      {/* Sign Up Link */}
+      {/* Sign In Link */}
       <div className="text-center text-sm text-[#6B7280]">
-        {`Don't`} have an account?
-        <Link href="#" className="text-[#4F46E5] font-medium hover:underline">
-          Create account
+        Already have an account?{" "}
+        <Link
+          href="/sign-in"
+          className="text-[#4F46E5] font-medium hover:underline"
+        >
+          Sign in
         </Link>
       </div>
     </form>
