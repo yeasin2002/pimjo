@@ -86,6 +86,7 @@
     "@types/debug": "latest",
     "@types/pg": "latest",
     "@upstash/redis": "latest",
+    "@vercel/speed-insights": "^1.2.0",
     "@vitest/browser": "latest",
     "@xata.io/client": "latest",
     "arktype": "latest",

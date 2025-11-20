@@ -8,6 +8,7 @@ import { rootMetadata } from '#/config/root-metadata'
 import { Toaster } from 'react-hot-toast'
 import { DiagonalPattern } from '../components/shared'
 import { fontVariable } from '../lib/fonts'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,6 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${fontVariable} antialiased  overflow-x-hidden`}>
         <DiagonalPattern.DiagonalPatternWrapper>
           {children}
+          <SpeedInsights />
         </DiagonalPattern.DiagonalPatternWrapper>
         <Toaster position="top-center" />
       </body>
