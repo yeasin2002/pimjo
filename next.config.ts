@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
   },
 
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+    ],
   },
 }
 
