@@ -6,9 +6,7 @@ const withNextIntl = createNextIntlPlugin()
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
 
 const nextConfig: NextConfig = {
-  experimental: {
-    typedRoutes: true,
-  },
+
 
   webpack(config) {
     config.module.rules.push({
