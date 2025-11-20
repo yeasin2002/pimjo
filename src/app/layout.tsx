@@ -9,7 +9,7 @@ import { rootMetadata } from '#/config/root-metadata'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default async function RootLayout({ children, }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
