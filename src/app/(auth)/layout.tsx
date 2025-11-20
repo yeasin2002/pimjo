@@ -1,25 +1,12 @@
 import { FormDivider } from "@/feature/auth/form-divider";
 import { OAuthentication } from "@/feature/auth/o-authentication";
 import { SignInHeader } from "@/feature/auth/sign-in-header";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 
-export default async function AuthLayout({
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  // Check if user is already logged in
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  // If user is logged in, redirect to dashboard
-  if (session) {
-    redirect("/dashboard");
-  }
-
+  }) {
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex items-center justify-center p-4">
       <div className="w-full max-w-md">
