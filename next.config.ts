@@ -6,9 +6,6 @@ const withNextIntl = createNextIntlPlugin()
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
 
 const nextConfig: NextConfig = {
-  // standalone output for Docker
-  // output: 'standalone',
-
   experimental: {
     typedRoutes: true,
   },

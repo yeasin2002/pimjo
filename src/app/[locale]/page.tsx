@@ -3,8 +3,12 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Code2, Database, Palette, Shield, Sparkles, TestTube, Zap } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { db } from '../../db'
+import { usersTable } from '../../db/schema'
 
 export default async function HomePage() {
+  const user = await db.select().from(usersTable)
+  console.log('user', user)
   const t = await getTranslations('hero')
   console.log('page: title', t('title'))
 

@@ -10,6 +10,7 @@
 import * as dotenv from 'dotenv'
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
+import { usersTable } from '../src/db/schema'
 
 // Load environment variables
 dotenv.config()
@@ -31,14 +32,18 @@ async function seed() {
 
     // Add your seeding logic here
     // Example:
-    // await db.insert(users).values([
-    //   {
-    //     id: '1',
-    //     email: 'admin@example.com',
-    //     name: 'Admin User',
-    //     createdAt: new Date(),
-    //   },
-    // ]);
+    await db.insert(usersTable).values([
+      {
+        email: 'admin@example.com',
+        age: 25,
+        name: 'Admin User',
+      },
+      {
+        email: 'user@example.com',
+        age: 25,
+        name: 'User',
+      }
+    ]);
 
     console.log('✅ Database seeding completed successfully!')
   } catch (error) {
