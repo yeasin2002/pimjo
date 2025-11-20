@@ -26,6 +26,7 @@ export default function SignInPage() {
   });
 
   const onSubmit = (data: SignInFormData) => {
+    console.log(data);
     // signIn("credentials", {
     //   email: data.email,
     //   password: data.password,
