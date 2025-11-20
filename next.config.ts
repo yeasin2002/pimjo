@@ -10,13 +10,14 @@ const nextConfig: NextConfig = {
     typedRoutes: true,
   },
 
-  eslint: {
-    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+    return config;
   },
 
-  typescript: {
-    ignoreBuildErrors: process.env.NODE_ENV === 'production',
-  },
 
   images: {
     remotePatterns: [],
