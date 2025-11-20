@@ -10,7 +10,7 @@ const StarFatIcon = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={cn("", className)}
     >
-      <g clip-path="url(#clip0_14604_22711)">
+      <g clipPath="url(#clip0_14604_22711)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"

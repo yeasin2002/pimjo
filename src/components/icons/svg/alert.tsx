@@ -10,7 +10,7 @@ const AlertIcon = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={cn("", className)}
     >
-      <g clip-path="url(#clip0_16106_25297)">
+      <g clipPath="url(#clip0_16106_25297)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
