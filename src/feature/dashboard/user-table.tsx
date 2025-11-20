@@ -2,17 +2,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/ui/table";
 import { Filter, SearchIcon } from "lucide-react";
 import Image from "next/image";
 
-const UserTable = () => {
+export const UserTable = () => {
   return (
     <div>
       {/* Table Header Section */}
@@ -309,4 +309,4 @@ const UserTable = () => {
   );
 };
 
-export default UserTable;
+

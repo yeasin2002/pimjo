@@ -1,5 +1,4 @@
-import StaticsCards from "./statics-cards";
-import UserTable from "./user-table";
+import { StaticsCards, UserTable } from "@/feature/dashboard";
 
 const NewDashboardPage = () => {
     return (
