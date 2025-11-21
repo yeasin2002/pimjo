@@ -1,7 +1,6 @@
 name: Lighthouse
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   lighthouse:
@@ -37,8 +36,8 @@ jobs:
               core.setOutput('seo', Math.round(scores.seo * 100));
             }
 
-      - name: Create badges directory
-        run: mkdir -p badges
+      - name: Create generated directory
+        run: mkdir -p generated
 
       - name: Generate Performance Badge
         uses: emibcn/badge-action@v2.0.3
@@ -46,7 +45,7 @@ jobs:
           label: 'Performance'
           status: ${{ steps.extract_scores.outputs.performance }}
           color: ${{ steps.extract_scores.outputs.performance > 90 && 'green' || steps.extract_scores.outputs.performance > 50 && 'yellow' || 'red' }}
-          path: 'badges/performance.svg'
+          path: 'generated/performance.svg'
 
       - name: Generate Accessibility Badge
         uses: emibcn/badge-action@v2.0.3
@@ -54,7 +53,7 @@ jobs:
           label: 'Accessibility'
           status: ${{ steps.extract_scores.outputs.accessibility }}
           color: ${{ steps.extract_scores.outputs.accessibility > 90 && 'green' || steps.extract_scores.outputs.accessibility > 50 && 'yellow' || 'red' }}
-          path: 'badges/accessibility.svg'
+          path: 'generated/accessibility.svg'
 
       - name: Generate Best Practices Badge
         uses: emibcn/badge-action@v2.0.3
@@ -62,7 +61,7 @@ jobs:
           label: 'Best Practices'
           status: ${{ steps.extract_scores.outputs.best-practices }}
           color: ${{ steps.extract_scores.outputs.best-practices > 90 && 'green' || steps.extract_scores.outputs.best-practices > 50 && 'yellow' || 'red' }}
-          path: 'badges/best-practices.svg'
+          path: 'generated/best-practices.svg'
 
       - name: Generate SEO Badge
         uses: emibcn/badge-action@v2.0.3
@@ -70,12 +69,12 @@ jobs:
           label: 'SEO'
           status: ${{ steps.extract_scores.outputs.seo }}
           color: ${{ steps.extract_scores.outputs.seo > 90 && 'green' || steps.extract_scores.outputs.seo > 50 && 'yellow' || 'red' }}
-          path: 'badges/seo.svg'
+          path: 'generated/seo.svg'
 
       - name: Commit badges
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add badges/*.svg
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update Lighthouse badges [skip ci]"
+          git add generated/*.svg
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Lighthouse badges"
           git push

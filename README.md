@@ -9,10 +9,10 @@ A full-stack application featuring authentication, dynamic content management, a
 
 ### Lighthouse Score
 
-![Performance](./badges/performance.svg)
-![Accessibility](./badges/accessibility.svg)
-![Best Practices](./badges/best-practices.svg)
-![SEO](./badges/seo.svg)
+![Performance](./generated/performance.svg)
+![Accessibility](./generated/accessibility.svg)
+![Best Practices](./generated/best-practices.svg)
+![SEO](./generated/seo.svg)
 
 **Figma Design**: [View Design](https://www.figma.com/design/g5DDrAT6qYIM4eqQm5r6tW/Front-end-developer-assessment)
 
