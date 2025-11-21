@@ -47,6 +47,7 @@
         "@tidbcloud/serverless": "latest",
         "@types/debug": "latest",
         "@types/pg": "latest",
+        "@uidotdev/usehooks": "^2.4.1",
         "@upstash/redis": "latest",
         "@vercel/speed-insights": "^1.2.0",
         "@vitest/browser": "latest",
@@ -1203,6 +1204,8 @@
     "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.47.0", "", { "dependencies": { "@typescript-eslint/types": "8.47.0", "eslint-visitor-keys": "^4.2.1" } }, "sha512-SIV3/6eftCy1bNzCQoPmbWsRLujS8t5iDIZ4spZOBHqrM+yfX2ogg8Tt3PDTAVKw3sSCiUgg30uOAvK2r9zGjQ=="],
 
     "@typhonjs/babel-parser": ["@typhonjs/babel-parser@0.2.0", "", { "dependencies": { "@babel/parser": "^7.0.0", "babel-runtime": "^6.0.0" } }, "sha512-YKqLZaQAVtOjMiqcJIqex1ezduMefBitoQZjsOqr4US+Yq+cOY/obyloOJ7Ee+XDPaaraVrxWkA3VZjOohtVjQ=="],
+
+    "@uidotdev/usehooks": ["@uidotdev/usehooks@2.4.1", "", { "peerDependencies": { "react": ">=18.0.0", "react-dom": ">=18.0.0" } }, "sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg=="],
 
     "@unrs/resolver-binding-linux-x64-gnu": ["@unrs/resolver-binding-linux-x64-gnu@1.11.1", "", { "os": "linux", "cpu": "x64" }, ""],
 

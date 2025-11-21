@@ -5,6 +5,6 @@ export interface DashboardUser {
   product: string
   dealValue: string
   closeDate: string
-  status: 'Pending' | 'In Progress' | 'Complete' | string
+  status: 'Complete' | 'Pending'
   avatar: string
 }

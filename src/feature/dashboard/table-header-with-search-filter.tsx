@@ -1,16 +1,28 @@
 import { Input } from '@/components/ui/input'
 import { Filter, SearchIcon, X } from 'lucide-react'
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+
 interface TableHeaderWithSearchFilterProps {
   searchQuery: string
   onSearchChange: (value: string) => void
   totalUsers: number
+  statusFilter: string
+  onStatusFilterChange: (value: string) => void
 }
 
 const TableHeaderWithSearchFilter = ({
   searchQuery,
   onSearchChange,
   totalUsers,
+  statusFilter,
+  onStatusFilterChange,
 }: TableHeaderWithSearchFilterProps) => {
   return (
     <div className="flex items-center justify-between rounded-t-xl bg-white px-3 py-4 md:px-6">
@@ -42,12 +54,19 @@ const TableHeaderWithSearchFilter = ({
         <div className="flex h-11 items-center space-x-1 rounded-[12px] border border-[#D0D5DD] bg-white px-3 py-4 md:hidden">
           <SearchIcon className="text-[#344054]" />
         </div>
-        <div className="flex h-11 items-center space-x-1 rounded-[12px] border border-[#D0D5DD] bg-white px-3 py-4">
-          <Filter className="h-5 w-5 text-[#344054]" />
-          <p className="hidden text-sm leading-5 tracking-[-0.02px] text-[#344054] md:block">
-            Filter
-          </p>
-        </div>
+        <Select value={statusFilter} onValueChange={onStatusFilterChange}>
+          <SelectTrigger className="h-11 w-[150px] rounded-[12px] border border-[#D0D5DD] bg-white px-3">
+            <div className="flex items-center space-x-2">
+              <Filter className="h-5 w-5 text-[#344054]" />
+              <SelectValue placeholder="Filter" />
+            </div>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Status</SelectItem>
+            <SelectItem value="Complete">Complete</SelectItem>
+            <SelectItem value="Pending">Pending</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   )

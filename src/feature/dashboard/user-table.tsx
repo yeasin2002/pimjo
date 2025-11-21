@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 import { useUsers } from '@/hooks/use-users'
+import { useDebounce } from '@uidotdev/usehooks'
 import { parseAsInteger, parseAsString, useQueryStates } from 'nuqs'
 import { useMemo, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -22,15 +23,17 @@ export const UserTable = () => {
   const { users, loading, error, refetch, deleteUser, deleting } = useUsers()
 
   // Use nuqs for URL state management
-  const [{ page, search }, setQuery] = useQueryStates(
+  const [{ page, search, status }, setQuery] = useQueryStates(
     {
       page: parseAsInteger.withDefault(1),
       search: parseAsString.withDefault(''),
+      status: parseAsString.withDefault('all'),
     },
     {
       history: 'push',
     }
   )
+  const debouncedSearch = useDebounce(search, 300)
 
   // Delete dialog state
   const [deleteDialog, setDeleteDialog] = useState<{
@@ -43,16 +46,26 @@ export const UserTable = () => {
     userName: '',
   })
 
-  // Filter users based on search query
+  // Filter users based on search query and status
   const filteredUsers = useMemo(() => {
-    if (!search) return users
+    let result = users
 
-    const query = search.toLowerCase()
-    return users.filter(
-      (user) =>
-        user.customer.toLowerCase().includes(query) || user.email.toLowerCase().includes(query)
-    )
-  }, [users, search])
+    // Filter by search query
+    if (debouncedSearch) {
+      const query = debouncedSearch.toLowerCase()
+      result = result.filter(
+        (user) =>
+          user.customer.toLowerCase().includes(query) || user.email.toLowerCase().includes(query)
+      )
+    }
+
+    // Filter by status
+    if (status && status !== 'all') {
+      result = result.filter((user) => user.status === status)
+    }
+
+    return result
+  }, [users, debouncedSearch, status])
 
   // Paginate filtered users
   const paginatedUsers = useMemo(() => {
@@ -105,12 +118,19 @@ export const UserTable = () => {
     setQuery({ search: '', page: 1 })
   }
 
+  // Handle status filter change
+  const handleStatusFilterChange = (value: string) => {
+    setQuery({ status: value, page: 1 }) // Reset to page 1 when filtering
+  }
+
   return (
     <div>
       <TableHeaderWithSearchFilter
         searchQuery={search}
         onSearchChange={handleSearchChange}
         totalUsers={users.length}
+        statusFilter={status}
+        onStatusFilterChange={handleStatusFilterChange}
       />
       <Table className="w-full bg-white">
         <TableHeader className="bg-[#F9FAFB]">

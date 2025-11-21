@@ -85,6 +85,7 @@
     "@tidbcloud/serverless": "latest",
     "@types/debug": "latest",
     "@types/pg": "latest",
+    "@uidotdev/usehooks": "^2.4.1",
     "@upstash/redis": "latest",
     "@vercel/speed-insights": "^1.2.0",
     "@vitest/browser": "latest",

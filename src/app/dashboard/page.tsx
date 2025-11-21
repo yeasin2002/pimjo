@@ -14,7 +14,6 @@ const NewDashboardPage = () => {
   )
 }
 
-// Skeleton fallback for Suspense
 function UserTableSkeleton() {
   return (
     <div className="animate-pulse">
