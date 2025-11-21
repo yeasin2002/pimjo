@@ -5,12 +5,7 @@ const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'tr
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'i.pravatar.cc',
-      },
-    ],
+    remotePatterns: [{ hostname: 'i.pravatar.cc' }, { hostname: 'randomuser.me' }],
   },
 
   webpack(config) {

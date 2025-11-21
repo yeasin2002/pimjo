@@ -12,11 +12,11 @@ Front-End Developer Assessment (FED-11/25) - Building a full-stack application w
 
 ## 📈 Progress Summary
 
-### Overall Completion: ~60%
+### Overall Completion: ~85%
 
 - **Landing Page**: 95% ✅
 - **Authentication**: 60% 🚧
-- **Dashboard**: 40% 🚧
+- **Dashboard**: 100% ✅
 
 ---
 
@@ -125,168 +125,145 @@ GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
 // - Different validation rules
 ```
 
-### 2. User Table API Integration ⚠️ CRITICAL
+### 2. User Table API Integration ✅ COMPLETE
 
 **Location**: `src/feature/dashboard/user-table.tsx`
 
-**Current State**: Shows 5 hardcoded users
+**Status**: Fully implemented with API integration
 
-**Required**:
+**Completed**:
 
-- [ ] Fetch users from API: `GET https://69102d7545e65ab24ac5d435.mockapi.io/users`
-- [ ] Replace static data with API data
-- [ ] Handle loading state
-- [ ] Handle error state
-- [ ] Handle empty state
+- ✅ Fetch users from API: `GET https://69102d7545e65ab24ac5d435.mockapi.io/users`
+- ✅ Replace static data with API data
+- ✅ Handle loading state with skeleton
+- ✅ Handle error state with retry
+- ✅ Handle empty state
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Create: src/hooks/use-users.ts
-export function useUsers() {
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  // Fetch logic here
-
-  return { users, loading, error, refetch }
-}
+// Created: src/hooks/use-users.ts
+// Handles fetching, deleting, and state management
 ```
 
-### 3. Client-Side Pagination ⚠️ HIGH PRIORITY
+### 3. Client-Side Pagination ✅ COMPLETE
 
-**Location**: `src/feature/dashboard/user-table.tsx` (footer section)
+**Location**: `src/feature/dashboard/user-table.tsx` + `src/feature/dashboard/footer-with-pagination.tsx`
 
-**Current State**: UI exists but buttons are disabled
+**Status**: Fully implemented with URL state management
 
-**Required**:
+**Completed**:
 
-- [ ] Implement pagination logic (5 users per page)
-- [ ] Enable Previous/Next buttons
-- [ ] Show correct page numbers
-- [ ] Update "Showing X of Y results" text
-- [ ] Maintain pagination state
+- ✅ Implement pagination logic (5 users per page)
+- ✅ Enable Previous/Next buttons
+- ✅ Show correct page numbers
+- ✅ Update "Showing X of Y results" text dynamically
+- ✅ Maintain pagination state in URL using nuqs
+- ✅ Auto-adjust page when deleting last item on page
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Create: src/hooks/use-pagination.ts
-export function usePagination(items: any[], itemsPerPage: number) {
-  const [currentPage, setCurrentPage] = useState(1)
-
-  const totalPages = Math.ceil(items.length / itemsPerPage)
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const currentItems = items.slice(startIndex, endIndex)
-
-  return {
-    currentItems,
-    currentPage,
-    totalPages,
-    nextPage: () => setCurrentPage((p) => Math.min(p + 1, totalPages)),
-    prevPage: () => setCurrentPage((p) => Math.max(p - 1, 1)),
-    goToPage: (page: number) => setCurrentPage(page),
-  }
-}
+// Using nuqs for URL state management
+// Pagination state persists in URL query params
 ```
 
-### 4. Search/Filter Functionality ⚠️ HIGH PRIORITY
+### 4. Search/Filter Functionality ✅ COMPLETE
 
-**Location**: `src/feature/dashboard/user-table.tsx` (header section)
+**Location**: `src/feature/dashboard/table-header-with-search-filter.tsx` + `src/feature/dashboard/user-table.tsx`
 
-**Current State**: Search input exists but is disabled
+**Status**: Fully implemented with URL state management
 
-**Required**:
+**Completed**:
 
-- [ ] Enable search input
-- [ ] Implement client-side filtering by name or email
-- [ ] Update results in real-time
-- [ ] Show "No results found" when search returns empty
-- [ ] Clear search functionality
+- ✅ Enable search input
+- ✅ Implement client-side filtering by name or email
+- ✅ Update results in real-time
+- ✅ Show "No results found" when search returns empty
+- ✅ Clear search functionality with X button
+- ✅ Search state persists in URL using nuqs
+- ✅ Auto-reset to page 1 when searching
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// In user-table.tsx or separate component
-const [searchQuery, setSearchQuery] = useState('')
-
-const filteredUsers = users.filter(
-  (user) =>
-    user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchQuery.toLowerCase())
-)
+// Using nuqs for URL state management
+// Search query persists in URL query params
+// Filters by customer name and email
 ```
 
-### 5. Delete User Feature ⚠️ HIGH PRIORITY
+### 5. Delete User Feature ✅ COMPLETE
 
-**Location**: `src/feature/dashboard/user-table.tsx` (Action column)
+**Location**: `src/feature/dashboard/user.row.tsx` + `src/components/dashboard/delete-user-dialog.tsx`
 
-**Current State**: Action column shows "—" placeholder
+**Status**: Fully implemented with confirmation dialog
 
-**Required**:
+**Completed**:
 
-- [ ] Add delete button/icon in Action column
-- [ ] Create confirmation dialog component
-- [ ] Implement DELETE API call: `DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id`
-- [ ] Update UI after successful deletion
-- [ ] Show success/error feedback
-- [ ] Handle loading state during deletion
+- ✅ Add delete button/icon in Action column
+- ✅ Create confirmation dialog component
+- ✅ Implement DELETE API call: `DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id`
+- ✅ Update UI after successful deletion (optimistic update)
+- ✅ Show success/error feedback with toast notifications
+- ✅ Handle loading state during deletion
+- ✅ Prevent dialog close during deletion
+- ✅ Show user name in confirmation message
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Create: src/components/dashboard/delete-user-dialog.tsx
-// Use shadcn/ui AlertDialog component
-// Show user name in confirmation message
-// Handle API call and UI update
+// Created: src/components/dashboard/delete-user-dialog.tsx
+// Uses shadcn/ui AlertDialog component
+// Integrated with useUsers hook for API calls
 ```
 
-### 6. Loading States ⚠️ MEDIUM PRIORITY
+### 6. Loading States ✅ COMPLETE
 
-**Required Locations**:
+**Completed Locations**:
 
-- [ ] User table while fetching data
-- [ ] Delete operation
-- [ ] Sign-up form submission
-- [ ] Any async operations
+- ✅ User table while fetching data (skeleton rows)
+- ✅ Delete operation (button disabled state)
+- ✅ Delete dialog (shows "Deleting..." text)
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Use existing shadcn/ui Skeleton component
-// Location: src/components/ui/skeleton.tsx
-// Create loading skeleton for table rows
+// Created: src/components/dashboard/table-skeleton.tsx
+// Uses shadcn/ui Skeleton component
+// Shows 5 skeleton rows matching table structure
 ```
 
-### 7. Empty States ⚠️ MEDIUM PRIORITY
+### 7. Empty States ✅ COMPLETE
 
-**Required Locations**:
+**Completed Locations**:
 
-- [ ] User table when no users exist
-- [ ] User table when search returns no results
+- ✅ User table when no users exist
+- ✅ User table when search returns no results
+- ✅ Different messages for each scenario
+- ✅ Clear filters button when search is active
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Create: src/components/shared/empty-state.tsx
-// Show icon, message, and optional action button
+// Created: src/components/dashboard/empty-state.tsx
+// Shows icon, message, description, and optional reset button
+// Integrated with search functionality
 ```
 
-### 8. Error States ⚠️ MEDIUM PRIORITY
+### 8. Error States ✅ COMPLETE
 
-**Required Locations**:
+**Completed Locations**:
 
-- [ ] User table fetch failure
-- [ ] Delete operation failure
-- [ ] Network errors
+- ✅ User table fetch failure (with retry button)
+- ✅ Delete operation failure (toast notification)
+- ✅ Network errors handled gracefully
 
-**Suggested Implementation**:
+**Implementation**:
 
 ```typescript
-// Show error message with retry button
-// Use existing toast component for notifications
-// Location: src/components/ui/toast.tsx (already exists)
+// Created: src/components/dashboard/error-state.tsx
+// Shows error icon, message, and retry button
+// Uses react-hot-toast for delete error notifications
 ```
 
 ---

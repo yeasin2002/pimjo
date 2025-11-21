@@ -3,17 +3,18 @@ import type React from 'react'
 import '../styles/globals.css'
 
 import { rootMetadata } from '#/config/root-metadata'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Toaster } from 'react-hot-toast'
 import { DiagonalPattern } from '../components/shared'
 import { fontVariable } from '../lib/fonts'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fontVariable} overflow-x-hidden antialiased`}>
         <DiagonalPattern.DiagonalPatternWrapper>
-          {children}
+          <NuqsAdapter>{children}</NuqsAdapter>
           <SpeedInsights />
         </DiagonalPattern.DiagonalPatternWrapper>
         <Toaster position="top-center" />
