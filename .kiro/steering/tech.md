@@ -26,8 +26,6 @@
 
 ## Internationalization
 
-- **next-intl** for i18n support with locale routing
-
 ## Testing
 
 - **Vitest** for unit testing with jsdom environment

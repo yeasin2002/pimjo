@@ -104,7 +104,6 @@
     "kysely": "latest",
     "lucide-react": "^0.454.0",
     "next": "^16.0.3",
-    "next-intl": "^4.3.4",
     "pg": "latest",
     "postgres": "latest",
     "react": "^19.2.0",

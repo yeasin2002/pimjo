@@ -7,8 +7,7 @@
  * Run with: node scripts/clean.js
  */
 
-const fs = require('fs')
-const path = require('path')
+import { existsSync, rmSync, unlinkSync } from 'fs'
 
 const foldersToClean = ['.next', 'dist', 'build', 'coverage', 'playwright-report', 'test-results']
 
@@ -18,10 +17,10 @@ console.log('🧹 Cleaning build artifacts...\n')
 
 // Clean folders
 foldersToClean.forEach((folder) => {
-  if (fs.existsSync(folder)) {
+  if (existsSync(folder)) {
     console.log(`🗑️  Removing ${folder}/`)
     try {
-      fs.rmSync(folder, { recursive: true, force: true })
+      rmSync(folder, { recursive: true, force: true })
       console.log(`✅ Removed ${folder}/`)
     } catch (error) {
       console.log(`❌ Failed to remove ${folder}/: ${error.message}`)
@@ -31,10 +30,10 @@ foldersToClean.forEach((folder) => {
 
 // Clean files
 filesToClean.forEach((file) => {
-  if (fs.existsSync(file)) {
+  if (existsSync(file)) {
     console.log(`🗑️  Removing ${file}`)
     try {
-      fs.unlinkSync(file)
+      unlinkSync(file)
       console.log(`✅ Removed ${file}`)
     } catch (error) {
       console.log(`❌ Failed to remove ${file}: ${error.message}`)
