@@ -1,6 +1,6 @@
-# 🎯 Pimjo - Modern UI Component Library & Dashboard
+# 🎯 Pimjo - Task
 
-A full-stack application featuring authentication, dynamic content management, and user dashboard built with Next.js 15, TypeScript, and modern web technologies.
+Your task is to build a fully functional front-end application using Next.js 16 and Tailwind CSS, following the provided Figma design and modern front-end best practices.
 
 ### Code Quality Analysis
 
