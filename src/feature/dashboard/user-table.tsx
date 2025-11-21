@@ -8,10 +8,7 @@ import { UserTableRow } from './user.row'
 export const UserTable = () => {
   return (
     <div>
-      {/* Table Header Section */}
       <TableHeaderWithSearchFilter />
-
-      {/* Table */}
       <Table className="w-full bg-white">
         <TableHeader className="bg-[#F9FAFB]">
           <TableRow>
