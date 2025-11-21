@@ -2,26 +2,47 @@ import type { Metadata } from 'next'
 
 export const rootMetadata: Metadata = {
   title: {
-    default: 'Next.js Boilerplate',
-    template: '%s | Next.js Boilerplate',
+    default: `Pimjo: We Build Tools to Create What's Next on the Web`,
+    template: '%s | Pimjo',
   },
-  description: 'A comprehensive Next.js boilerplate with modern tooling',
-  keywords: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  description:
+    'Pimjo empowers developers with intuitive web tools to build smarter, faster, and more confidently, converting visionary ideas into high-impact solutions.',
+  keywords: [
+    'Web Development Tools',
+    'Developer Tools',
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'UI Components',
+    'Templates',
+    'SaaS Boilerplate',
+  ],
+  authors: [{ name: 'Pimjo' }],
+  creator: 'Pimjo',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
-    title: 'Next.js Boilerplate',
-    description: 'A comprehensive Next.js boilerplate with modern tooling',
-    siteName: 'Next.js Boilerplate',
+    url: 'https://pimjo.com',
+    title: `Pimjo: We Build Tools to Create What's Next on the Web`,
+    description:
+      'Pimjo empowers developers with intuitive web tools to build smarter, faster, and more confidently, converting visionary ideas into high-impact solutions.',
+    siteName: 'Pimjo',
+    images: [
+      {
+        url: 'https://cdn.sanity.io/images/x0ivb4tp/production/01d61af81e97c5e441cd528694e06cefb0bb2b5e-1800x1092.jpg',
+        width: 1800,
+        height: 1092,
+        alt: 'Pimjo - Web Development Tools',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Next.js Boilerplate',
-    description: 'A comprehensive Next.js boilerplate with modern tooling',
-    creator: '@yourusername',
+    title: `Pimjo: We Build Tools to Create Whats Next on the Web    description:     'Pimjo empowers developers with intuitive web tools to build smarter, faster, and more confidently, converting visionary ideas into high-impact solutions.`,
+    images: [
+      'https://cdn.sanity.io/images/x0ivb4tp/production/01d61af81e97c5e441cd528694e06cefb0bb2b5e-1800x1092.jpg',
+    ],
   },
   robots: {
     index: true,
