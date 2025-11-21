@@ -1,4 +1,4 @@
-# 🎯 Front-End Developer Assessment (FED-11/25)
+# 🎯 Pimjo - Modern UI Component Library & Dashboard
 
 A full-stack application featuring authentication, dynamic content management, and user dashboard built with Next.js 15, TypeScript, and modern web technologies.
 
@@ -40,8 +40,6 @@ A full-stack application featuring authentication, dynamic content management, a
 
 - 🎯 **ESLint** - Code linting
 - 💅 **Prettier** - Code formatting
-- 🧪 **Vitest** - Unit testing
-- 🎭 **Playwright** - E2E testing
 
 ## 🚀 Quick Start
 
@@ -112,16 +110,6 @@ npm run db:studio    # Open Drizzle Studio
 npm run db:seed      # Seed database with sample data
 ```
 
-### 🧪 **Testing**
-
-```bash
-npm run test         # Run unit tests
-npm run test:watch   # Run tests in watch mode
-npm run test:coverage # Run tests with coverage report
-npm run test:e2e     # Run E2E tests
-npm run test:e2e:ui  # Run E2E tests with UI
-```
-
 ### 💅 **Code Quality**
 
 ```bash
@@ -157,55 +145,11 @@ npm run docker:test  # Run test container (Linux/Mac)
 # scripts/docker-dev.bat  # Run development container (Windows)
 ``` -->
 
-### 📚 **Storybook**
-
-```bash
-npm run storybook       # Start Storybook dev server
-npm run build-storybook # Build Storybook for production
-```
-
 ### 📊 **Analysis**
 
 ```bash
 npm run analyze      # Analyze bundle size
 ```
-
-## 📁 Project Structure
-
-```
-├── .kiro/                    # Kiro AI assistant configuration
-├── public/                   # Static assets
-├── src/
-│   ├── app/
-│   │   ├── (auth)/          # Authentication routes
-│   │   │   ├── sign-in/     ✅ Implemented
-│   │   │   └── sign-up/     ⏳ In Progress
-│   │   ├── dashboard/       🚧 Needs API integration
-│   │   ├── api/auth/        ✅ better-auth routes
-│   │   └── page.tsx         ✅ Landing page
-│   ├── components/
-│   │   ├── auth/            ✅ Auth form components
-│   │   ├── shared/          ✅ Shared components (navbar, etc.)
-│   │   └── ui/              ✅ shadcn/ui components
-│   ├── feature/
-│   │   ├── auth/            ✅ Auth feature components
-│   │   ├── dashboard/       🚧 Dashboard features
-│   │   └── homepage/        ✅ Landing page sections
-│   ├── hooks/               🚧 Custom React hooks
-│   ├── lib/                 ✅ Utilities & auth config
-│   ├── db/                  ✅ Database schema & config
-│   ├── types/               ⏳ TypeScript definitions
-│   └── middleware.ts        ✅ Route protection
-└── tests/                   # E2E and integration tests
-```
-
-### Key Files
-
-- `src/middleware.ts` - Route protection and authentication guards
-- `src/lib/auth.ts` - better-auth server configuration
-- `src/lib/auth-client.ts` - Client-side auth utilities
-- `src/components/shared/home-navbar.tsx` - Dynamic menu implementation
-- `src/feature/dashboard/user-table.tsx` - User table (needs API integration)
 
 ## 🔧 Configuration
 
@@ -228,30 +172,6 @@ GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
 ```
 
-### Database Setup
-
-1. Create a PostgreSQL database
-2. Add `DATABASE_URL` to `.env`
-3. Run migrations:
-   ```bash
-   npm run db:generate
-   npm run db:migrate
-   ```
-4. Seed test data (includes test user):
-   ```bash
-   npm run db:seed
-   ```
-
-### Authentication Setup
-
-The project uses **better-auth** with:
-
-- Email/password authentication
-- GitHub OAuth (optional)
-- Google OAuth (optional)
-- Session-based authentication
-- Middleware route protection
-
 ## 📋 API Endpoints
 
 ### ✅ Integrated
@@ -261,44 +181,6 @@ The project uses **better-auth** with:
 GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
 // Status: Working in home-navbar.tsx
 ```
-
-### ⏳ Pending Integration
-
-```typescript
-// Users List
-GET https://69102d7545e65ab24ac5d435.mockapi.io/users
-// Needed for: Dashboard user table
-
-// Delete User
-DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
-// Needed for: Delete user functionality
-```
-
-## 🎯 Development Roadmap
-
-### Phase 1: Critical Features (Current Focus)
-
-- [ ] Integrate Users API in dashboard
-- [ ] Implement client-side pagination (5 per page)
-- [ ] Add search/filter functionality
-- [ ] Implement delete user with confirmation
-- [ ] Complete sign-up page
-
-### Phase 2: Polish & Quality
-
-- [ ] Add loading states for all async operations
-- [ ] Add empty states for no data scenarios
-- [ ] Improve error handling with retry options
-- [ ] Review Figma design compliance
-- [ ] Add comprehensive form validation
-
-### Phase 3: Testing & Optimization
-
-- [ ] Test authentication flow end-to-end
-- [ ] Test pagination and search
-- [ ] Performance optimization
-- [ ] Accessibility review
-- [ ] Cross-browser testing
 
 ## 🚀 Deployment
 
@@ -323,22 +205,6 @@ npm run build
 npm run start
 ```
 
-## 🐛 Known Issues
-
-- User table currently shows static data (API integration pending)
-- Pagination controls are disabled (implementation pending)
-- Search functionality is disabled (implementation pending)
-- Sign-up page needs implementation
-
-## 📚 Documentation
-
-For detailed implementation guidance, see:
-
-- `.kiro/steering/current-status.md` - Current project status
-- `.kiro/steering/assignment.md` - Assignment requirements
-- `.kiro/steering/tech.md` - Tech stack details
-- `.kiro/steering/structure.md` - Project structure
-
 ## 🙏 Acknowledgments
 
 - [Next.js](https://nextjs.org/) - React framework
@@ -348,6 +214,3 @@ For detailed implementation guidance, see:
 - [Drizzle ORM](https://orm.drizzle.team/) - Database ORM
 
 ---
-
-**Project Type**: Front-End Developer Assessment (FED-11/25)  
-**Status**: In Development (~60% Complete)
