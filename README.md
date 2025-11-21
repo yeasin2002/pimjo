@@ -172,16 +172,6 @@ GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
 ```
 
-## 📋 API Endpoints
-
-### ✅ Integrated
-
-```typescript
-// Dynamic Menu
-GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
-// Status: Working in home-navbar.tsx
-```
-
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
