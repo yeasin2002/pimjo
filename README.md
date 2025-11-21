@@ -1,112 +1,139 @@
-# 🚀 Next.js Starter Template
+# 🎯 Front-End Developer Assessment (FED-11/25)
 
-A production-ready Next.js boilerplate with modern tooling, comprehensive testing, and enterprise-grade features.
-### ⭐ **Star this repository if it helped you!** 
+A full-stack application featuring authentication, dynamic content management, and user dashboard built with Next.js 15, TypeScript, and modern web technologies.
 
-> 💫 **Built with love by [Yeasin](https://github.com/yeasin2002)**  and other contributor
+**Figma Design**: [View Design](https://www.figma.com/design/g5DDrAT6qYIM4eqQm5r6tW/Front-end-developer-assessment)
 
-##### If you found  any issue or have any suggestion, please open an [issue](https://github.com/yeasin2002/nextjs-starter-template/issues) or a [pull request](https://github.com/yeasin2002/nextjs-starter-template/pulls).
+## 📊 Project Status
 
-##### Feel free to reach out to me on [Linkedin](https://www.linkedin.com/in/yeasin2002/) or [Gmail](mailto:mdkawsarislam2002@gmail.com) if you have any questions or feedback.
+**Overall Completion**: ~60%
 
-## ✨ Features
+- ✅ **Landing Page**: 95% Complete
+- 🚧 **Authentication**: 60% Complete (Sign In ✅ | Sign Up ⏳)
+- 🚧 **Dashboard**: 40% Complete (UI ✅ | API Integration ⏳)
 
-### 🏗️ **Core Framework**
-- ⚡ **Next.js 15** with App Router & Server Components
-- 🔷 **TypeScript 5.8** with strict configuration
-- ⚛️ **React 19** with latest features
+### 🔑 Test Credentials
+- **Email**: `hello@demo.com`
+- **Password**: `demopass123`
 
-### 🎨 **UI & Styling**
-- 🎯 **Tailwind CSS** with custom design system
-- 🧩 **shadcn/ui** components with Radix UI primitives
-- 🌙 **Dark mode** support with next-themes
-- 🎭 **Lucide React** icons
+## ✨ Implemented Features
 
-### 🗄️ **Database & ORM**
-- 🐘 **Drizzle ORM** with PostgreSQL support
-- 🌐 **Multi-provider** support (Neon, PlanetScale, Turso, Xata)
-- 🔄 **Database migrations** and seeding
-- 🎛️ **Drizzle Studio** for database management
+### ✅ **Landing Page** (95% Complete)
+- 🎨 Pixel-perfect implementation matching Figma design
+- 📱 Fully responsive across all devices
+- 🔄 **Dynamic header menu** fetched from API
+- ✨ Hero section with animations
+- 📊 Analytics overview section
+- 💡 Features showcase
+- 💬 Testimonials section
+- 📧 Newsletter subscription
+- 🔗 Footer with links
 
-### 🔐 **Authentication**
-- 👤 **better-auth** integration for auth  management
-- 🔒 **Secure** authentication flows
-- 📧 **Email templates** with React Email
+### ✅ **Authentication System** (60% Complete)
+- 🔐 **Sign In Page** - Fully functional
+  - Email/password authentication
+  - OAuth integration (GitHub, Google)
+  - Form validation and error handling
+  - Loading states
+  - Auto-redirect to dashboard
+- ⏳ **Sign Up Page** - In Progress
+- 🛡️ **Middleware Protection** - Route guards working
+- 🔒 **better-auth** integration with PostgreSQL
 
-### 🌍 **Internationalization**
-- 🗣️ **next-intl** for i18n support
-- 🌐 **Locale routing** and translations
+### 🚧 **Dashboard** (40% Complete)
+- ✅ Dashboard layout and structure
+- ✅ Statistics cards UI
+- 🚧 **User Table** - Needs API integration
+  - ⏳ Fetch users from API (currently static data)
+  - ⏳ Client-side pagination (5 per page)
+  - ⏳ Search/filter by name or email
+  - ⏳ Delete user functionality
+  - ⏳ Loading, error, and empty states
 
-### 🧪 **Testing Suite**
-- ⚡ **Vitest** for unit testing with jsdom
-- 🎭 **Playwright** for E2E testing
-- 🧪 **Testing Library** for React components
-- 📚 **Storybook** for component development
-- 📊 **Coverage reports** with v8
+## 🎯 Pending Features
 
-### 🔧 **Development Tools**
-- 🎯 **ESLint** with Next.js & TypeScript configs
-- 💅 **Prettier** with Tailwind plugin
-- 🔍 **Knip** for unused code detection
-- 🦅 **Codehawk** for code analysis
-- 📦 **Bundle Analyzer** for optimization
+### 🔴 Critical Priority
+1. **User Table API Integration** - Replace static data with real API
+2. **Client-Side Pagination** - Implement 5 users per page
+3. **Search/Filter** - Filter users by name or email
+4. **Delete User** - With confirmation dialog
+5. **Sign Up Page** - Complete implementation matching Figma
 
-### 🐳 **DevOps & Deployment**
-<!-- - 🐳 **Docker** with multi-stage builds -->
-<!-- - 🔄 **Docker Compose** for development/production -->
-- 🏥 **Health checks** and monitoring
-- 📈 **Performance monitoring** with React Scan
+### 🟡 Medium Priority
+6. Loading states for all async operations
+7. Empty states when no data available
+8. Error handling with retry options
+9. Form validation improvements
+10. Success feedback for user actions
 
-### 🛡️ **Security & Performance**
-- 🔒 **Security headers** configured
-<!-- - 🚀 **Standalone output** for Docker -->
-- 📊 **OpenTelemetry** integration
-- ⚡ **Edge runtime** support
+## 🛠️ Tech Stack
+
+### **Core**
+- ⚡ **Next.js 15** - App Router & Server Components
+- 🔷 **TypeScript 5.8** - Strict type safety
+- ⚛️ **React 19** - Latest features
+
+### **UI & Styling**
+- 🎯 **Tailwind CSS** - Utility-first styling
+- 🧩 **shadcn/ui** - Radix UI components
+- 🎭 **Lucide React** - Icon library
+
+### **Backend & Database**
+- 🐘 **Drizzle ORM** - Type-safe database queries
+- 🗄️ **PostgreSQL** - Primary database
+- 🔐 **better-auth** - Authentication management
+
+### **Development Tools**
+- 🎯 **ESLint** - Code linting
+- 💅 **Prettier** - Code formatting
+- 🧪 **Vitest** - Unit testing
+- 🎭 **Playwright** - E2E testing
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ or Bun
-- PostgreSQL database
+- **Node.js 18+** or Bun
+- **PostgreSQL** database
 - Git
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/yeasin2002/nextjs-starter-template.git
-cd nextjs-starter-template
+# 1. Clone the repository
+git clone <repository-url>
+cd <project-directory>
 
-# Quick setup (recommended)
-npm run setup
-
-# Or manual setup:
-# Install dependencies
+# 2. Install dependencies
 npm install
 # or
 bun install
 
-# Copy environment variables
+# 3. Set up environment variables
 cp .env.example .env  # Linux/Mac
-# copy .env.example .env  # Windows
+copy .env.example .env  # Windows
 
-# Set up your database URL and other environment variables
-# Edit .env file with your configuration
+# 4. Configure your .env file
+# Add your DATABASE_URL and other required variables
+# Example: DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
 
-# Generate database schema
-npm run db:generate
+# 5. Set up the database
+npm run db:generate  # Generate migrations
+npm run db:migrate   # Apply migrations
+npm run db:seed      # Seed with test data (optional)
 
-# Run database migrations
-npm run db:migrate
-
-# Seed the database (optional)
-npm run db:seed
-
-# Start development server
+# 6. Start development server
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to see your application.
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+### 🔐 Test the Application
+
+1. **Landing Page**: Navigate to `/` to see the homepage with dynamic menu
+2. **Sign In**: Go to `/sign-in` and use test credentials:
+   - Email: `hello@demo.com`
+   - Password: `demopass123`
+3. **Dashboard**: After signing in, you'll be redirected to `/dashboard`
 
 ## 📜 Available Scripts
 
@@ -173,74 +200,173 @@ npm run analyze      # Analyze bundle size
 ## 📁 Project Structure
 
 ```
-├── .kiro/              # Kiro AI assistant configuration
-├── .storybook/         # Storybook configuration
-├── config/             # Application configuration
-├── public/             # Static assets
+├── .kiro/                    # Kiro AI assistant configuration
+├── public/                   # Static assets
 ├── src/
-│   ├── app/            # Next.js App Router pages
-│   ├── components/     # Reusable React components
-│   │   └── ui/         # shadcn/ui components
-│   ├── db/             # Database configuration & schema
-│   ├── hooks/          # Custom React hooks
-│   ├── i18n/           # Internationalization
-│   ├── lib/            # Utility libraries
-│   ├── styles/         # Global CSS
-│   ├── types/          # TypeScript definitions
-│   └── utils/          # Helper functions
-├── tests/              # E2E and integration tests
-└── scripts/            # Build and deployment scripts
+│   ├── app/
+│   │   ├── (auth)/          # Authentication routes
+│   │   │   ├── sign-in/     ✅ Implemented
+│   │   │   └── sign-up/     ⏳ In Progress
+│   │   ├── dashboard/       🚧 Needs API integration
+│   │   ├── api/auth/        ✅ better-auth routes
+│   │   └── page.tsx         ✅ Landing page
+│   ├── components/
+│   │   ├── auth/            ✅ Auth form components
+│   │   ├── shared/          ✅ Shared components (navbar, etc.)
+│   │   └── ui/              ✅ shadcn/ui components
+│   ├── feature/
+│   │   ├── auth/            ✅ Auth feature components
+│   │   ├── dashboard/       🚧 Dashboard features
+│   │   └── homepage/        ✅ Landing page sections
+│   ├── hooks/               🚧 Custom React hooks
+│   ├── lib/                 ✅ Utilities & auth config
+│   ├── db/                  ✅ Database schema & config
+│   ├── types/               ⏳ TypeScript definitions
+│   └── middleware.ts        ✅ Route protection
+└── tests/                   # E2E and integration tests
 ```
+
+### Key Files
+- `src/middleware.ts` - Route protection and authentication guards
+- `src/lib/auth.ts` - better-auth server configuration
+- `src/lib/auth-client.ts` - Client-side auth utilities
+- `src/components/shared/home-navbar.tsx` - Dynamic menu implementation
+- `src/feature/dashboard/user-table.tsx` - User table (needs API integration)
 
 ## 🔧 Configuration
 
 ### Environment Variables
-Copy `.env.example` to `.env` and configure:
-- Database connection
-- Optional: Sentry, PostHog, Stripe, etc.
+
+Required variables in `.env`:
+
+```env
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+
+# better-auth
+BETTER_AUTH_SECRET="your-secret-key"
+BETTER_AUTH_URL="http://localhost:3000"
+
+# OAuth (Optional)
+GITHUB_CLIENT_ID="your-github-client-id"
+GITHUB_CLIENT_SECRET="your-github-client-secret"
+GOOGLE_CLIENT_ID="your-google-client-id"
+GOOGLE_CLIENT_SECRET="your-google-client-secret"
+```
 
 ### Database Setup
-1. Set your `DATABASE_URL` in `.env`
-2. Run migrations: `npm run db:migrate`
-3. Optional: Seed data: `npm run db:seed`
 
-### Authentication
-- Better Auth 
+1. Create a PostgreSQL database
+2. Add `DATABASE_URL` to `.env`
+3. Run migrations:
+   ```bash
+   npm run db:generate
+   npm run db:migrate
+   ```
+4. Seed test data (includes test user):
+   ```bash
+   npm run db:seed
+   ```
+
+### Authentication Setup
+
+The project uses **better-auth** with:
+- Email/password authentication
+- GitHub OAuth (optional)
+- Google OAuth (optional)
+- Session-based authentication
+- Middleware route protection 
+
+## 📋 API Endpoints
+
+### ✅ Integrated
+```typescript
+// Dynamic Menu
+GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
+// Status: Working in home-navbar.tsx
+```
+
+### ⏳ Pending Integration
+```typescript
+// Users List
+GET https://69102d7545e65ab24ac5d435.mockapi.io/users
+// Needed for: Dashboard user table
+
+// Delete User
+DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
+// Needed for: Delete user functionality
+```
+
+## 🎯 Development Roadmap
+
+### Phase 1: Critical Features (Current Focus)
+- [ ] Integrate Users API in dashboard
+- [ ] Implement client-side pagination (5 per page)
+- [ ] Add search/filter functionality
+- [ ] Implement delete user with confirmation
+- [ ] Complete sign-up page
+
+### Phase 2: Polish & Quality
+- [ ] Add loading states for all async operations
+- [ ] Add empty states for no data scenarios
+- [ ] Improve error handling with retry options
+- [ ] Review Figma design compliance
+- [ ] Add comprehensive form validation
+
+### Phase 3: Testing & Optimization
+- [ ] Test authentication flow end-to-end
+- [ ] Test pagination and search
+- [ ] Performance optimization
+- [ ] Accessibility review
+- [ ] Cross-browser testing
 
 ## 🚀 Deployment
 
-<!-- ### Docker Deployment
+### Vercel (Recommended)
+1. Push code to GitHub
+2. Import project in Vercel
+3. Add environment variables:
+   - `DATABASE_URL`
+   - `BETTER_AUTH_SECRET`
+   - `BETTER_AUTH_URL`
+   - OAuth credentials (optional)
+4. Deploy
+
+### Manual Deployment
 ```bash
-# Build production image
-npm run docker:build
+# Build for production
+npm run build
 
-# Run production container
-npm run docker:prod
-``` -->
+# Start production server
+npm run start
+```
 
-### Vercel Deployment
-1. Connect your repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+## 🐛 Known Issues
 
-## 🤝 Contributing
+- User table currently shows static data (API integration pending)
+- Pagination controls are disabled (implementation pending)
+- Search functionality is disabled (implementation pending)
+- Sign-up page needs implementation
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+## 📚 Documentation
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+For detailed implementation guidance, see:
+- `.kiro/steering/current-status.md` - Current project status
+- `.kiro/steering/assignment.md` - Assignment requirements
+- `.kiro/steering/tech.md` - Tech stack details
+- `.kiro/steering/structure.md` - Project structure
 
 ## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) - The React framework
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
-- [Drizzle ORM](https://orm.drizzle.team/) - TypeScript ORM
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [better-auth](https://better-auth.com/) - Authentication
+- [Drizzle ORM](https://orm.drizzle.team/) - Database ORM
+
 ---
+
+**Project Type**: Front-End Developer Assessment (FED-11/25)  
+**Status**: In Development (~60% Complete)
 
 
