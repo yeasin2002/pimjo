@@ -15,7 +15,7 @@ interface Props {
   items: NavItem[]
 }
 
-export const DesktopNavigation = ({ items }: Props) => {
+export const DesktopNavigation = async ({ items }: Props) => {
   return (
     <div className="hidden md:flex md:flex-1">
       <NavigationMenu>

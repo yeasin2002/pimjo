@@ -23,11 +23,11 @@ export const SectionHeader = ({
               <span className="text-sm">{badgeText}</span>
             </div>
             <h2 className="mb-4 text-4xl font-bold">{title}</h2>
-            <p
+            <h3
               className={`max-w-3xl text-lg text-gray-600 ${className.includes('text-center') ? 'mx-auto' : ''}`}
             >
               {subtitle}
-            </p>
+            </h3>
           </div>
         </div>
       </div>

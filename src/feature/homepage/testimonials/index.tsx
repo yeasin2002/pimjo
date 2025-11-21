@@ -6,7 +6,6 @@ import { testimonials } from './testimonials.data'
 export const TestimonialSection = () => {
   return (
     <div className="hidden md:block">
-      {/* Header */}
       <SectionHeader
         icon={<StarFatIcon />}
         badgeText="Testimonial"
@@ -19,8 +18,6 @@ export const TestimonialSection = () => {
         }
         className="mt-0 border-t-0"
       />
-
-      {/* Testimonials Grid */}
       <div className="border-t border-b border-gray-200 bg-gray-50 p-10">
         <div className="grid grid-cols-1 gap-2 md:grid-cols-3 md:grid-rows-4">
           {testimonials.map((testimonial, index) => (
