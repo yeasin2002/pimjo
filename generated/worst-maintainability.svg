@@ -1,14 +1,14 @@
 <svg width="178.1" height="20" viewBox="0 0 1781 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="maintainability (worst): 49.74">
   <title>maintainability (worst): 49.74</title>
-  <linearGradient id="FnLTb" x2="0" y2="100%">
+  <linearGradient id="YZcOS" x2="0" y2="100%">
     <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <mask id="vCoXM"><rect width="1781" height="200" rx="30" fill="#FFF"/></mask>
-  <g mask="url(#vCoXM)">
+  <mask id="DGeMo"><rect width="1781" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#DGeMo)">
     <rect width="1361" height="200" fill="#555"/>
     <rect width="420" height="200" fill="#a4a61d" x="1361"/>
-    <rect width="1781" height="200" fill="url(#FnLTb)"/>
+    <rect width="1781" height="200" fill="url(#YZcOS)"/>
   </g>
   <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
     <text x="60" y="148" textLength="1261" fill="#000" opacity="0.25">maintainability (worst)</text>
