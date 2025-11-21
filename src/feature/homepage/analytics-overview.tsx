@@ -40,7 +40,7 @@ const AnalyticsHeader = () => {
 
 const AnalyticsOverviewCards = () => {
   return (
-    <div className="overflow-hidden bg-[url('/assets/section-gradient.png')] bg-size-[auto_650px] bg-position-[center_top_0rem] px-1.5 md:bg-no-repeat md:px-0">
+    <div className="overflow-hidden bg-[url('/section-gradient.png')] bg-size-[auto_650px] bg-position-[center_top_0rem] px-1.5 md:bg-no-repeat md:px-0">
       <div className="py-1.5 md:py-[11px]">
         <div className="grid grid-cols-1 gap-y-1.5 sm:grid-cols-2 md:grid-cols-3 md:gap-x-2.5">
           {featureStats.map((feature, index) => (

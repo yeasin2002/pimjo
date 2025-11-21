@@ -1,2 +1,2 @@
-export * from './patter-wrapper'
+export * from './pattern-wrappers'
 export * from './SectionHeader'
