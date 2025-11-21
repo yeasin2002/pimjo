@@ -6,6 +6,8 @@ on:
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,13 +21,61 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
 
-      - name: Format lighthouse score
-        id: format_lighthouse_score
+      - name: Extract Lighthouse scores
+        id: extract_scores
         uses: actions/github-script@v7
         with:
           script: |
-            const results = ${{ steps.lighthouse.outputs.manifest }}
-            const links = ${{ steps.lighthouse.outputs.links }}
+            const fs = require('fs');
+            const results = ${{ steps.lighthouse.outputs.manifest }};
 
-            console.log('Lighthouse results:', results)
-            console.log('Lighthouse links:', links)
+            if (results && results.length > 0) {
+              const scores = results[0].summary;
+              core.setOutput('performance', Math.round(scores.performance * 100));
+              core.setOutput('accessibility', Math.round(scores.accessibility * 100));
+              core.setOutput('best-practices', Math.round(scores['best-practices'] * 100));
+              core.setOutput('seo', Math.round(scores.seo * 100));
+            }
+
+      - name: Create badges directory
+        run: mkdir -p badges
+
+      - name: Generate Performance Badge
+        uses: emibcn/badge-action@v2.0.3
+        with:
+          label: 'Performance'
+          status: ${{ steps.extract_scores.outputs.performance }}
+          color: ${{ steps.extract_scores.outputs.performance > 90 && 'green' || steps.extract_scores.outputs.performance > 50 && 'yellow' || 'red' }}
+          path: 'badges/performance.svg'
+
+      - name: Generate Accessibility Badge
+        uses: emibcn/badge-action@v2.0.3
+        with:
+          label: 'Accessibility'
+          status: ${{ steps.extract_scores.outputs.accessibility }}
+          color: ${{ steps.extract_scores.outputs.accessibility > 90 && 'green' || steps.extract_scores.outputs.accessibility > 50 && 'yellow' || 'red' }}
+          path: 'badges/accessibility.svg'
+
+      - name: Generate Best Practices Badge
+        uses: emibcn/badge-action@v2.0.3
+        with:
+          label: 'Best Practices'
+          status: ${{ steps.extract_scores.outputs.best-practices }}
+          color: ${{ steps.extract_scores.outputs.best-practices > 90 && 'green' || steps.extract_scores.outputs.best-practices > 50 && 'yellow' || 'red' }}
+          path: 'badges/best-practices.svg'
+
+      - name: Generate SEO Badge
+        uses: emibcn/badge-action@v2.0.3
+        with:
+          label: 'SEO'
+          status: ${{ steps.extract_scores.outputs.seo }}
+          color: ${{ steps.extract_scores.outputs.seo > 90 && 'green' || steps.extract_scores.outputs.seo > 50 && 'yellow' || 'red' }}
+          path: 'badges/seo.svg'
+
+      - name: Commit badges
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add badges/*.svg
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Lighthouse badges [skip ci]"
+          git push

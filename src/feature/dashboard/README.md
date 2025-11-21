@@ -104,15 +104,20 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 
 ```tsx
 import { UserTable } from '@/feature/dashboard'
+import { Suspense } from 'react'
 
 export default function DashboardPage() {
   return (
     <div>
-      <UserTable />
+      <Suspense fallback={<LoadingSkeleton />}>
+        <UserTable />
+      </Suspense>
     </div>
   )
 }
 ```
+
+**Important**: The `UserTable` component uses `nuqs` for URL state management, which requires `useSearchParams()`. This must be wrapped in a Suspense boundary to avoid build errors.
 
 ## Technical Details
 
