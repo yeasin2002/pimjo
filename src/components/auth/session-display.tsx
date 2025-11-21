@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import { authClient, useSession } from "@/lib/auth-client";
+import { authClient, useSession } from '@/lib/auth-client'
 
 export function SessionDisplay() {
-  const { data: session, isPending } = useSession();
+  const { data: session, isPending } = useSession()
 
   if (isPending) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (!session) {
-    return <div>Not signed in</div>;
+    return <div>Not signed in</div>
   }
 
   const handleSignOut = async () => {
-    await authClient.signOut();
-    window.location.href = "/";
-  };
+    await authClient.signOut()
+    window.location.href = '/'
+  }
 
   return (
     <div className="space-y-4">
@@ -32,5 +32,5 @@ export function SessionDisplay() {
         Sign Out
       </button>
     </div>
-  );
+  )
 }

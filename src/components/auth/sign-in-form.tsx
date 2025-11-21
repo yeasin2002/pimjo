@@ -1,54 +1,54 @@
-"use client";
+'use client'
 
-import { authClient } from "@/lib/auth-client";
-import { useState } from "react";
+import { authClient } from '@/lib/auth-client'
+import { useState } from 'react'
 
 export function SignInForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
+    e.preventDefault()
+    setError('')
+    setLoading(true)
 
     try {
       await authClient.signIn.email({
         email,
         password,
-      });
+      })
       // Redirect or update UI on success
-      window.location.href = "/dashboard";
+      window.location.href = '/dashboard'
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Sign in failed");
+      setError(err instanceof Error ? err.message : 'Sign in failed')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleGoogleSignIn = async () => {
     try {
       await authClient.signIn.social({
-        provider: "google",
-        callbackURL: "/dashboard",
-      });
+        provider: 'google',
+        callbackURL: '/dashboard',
+      })
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Google sign in failed");
+      setError(err instanceof Error ? err.message : 'Google sign in failed')
     }
-  };
+  }
 
   const handleGitHubSignIn = async () => {
     try {
       await authClient.signIn.social({
-        provider: "github",
-        callbackURL: "/dashboard",
-      });
+        provider: 'github',
+        callbackURL: '/dashboard',
+      })
     } catch (err) {
-      setError(err instanceof Error ? err.message : "GitHub sign in failed");
+      setError(err instanceof Error ? err.message : 'GitHub sign in failed')
     }
-  };
+  }
 
   return (
     <div className="mx-auto max-w-md space-y-6">
@@ -88,7 +88,7 @@ export function SignInForm() {
           disabled={loading}
           className="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50"
         >
-          {loading ? "Signing in..." : "Sign In"}
+          {loading ? 'Signing in...' : 'Sign In'}
         </button>
       </form>
 
@@ -116,5 +116,5 @@ export function SignInForm() {
         </button>
       </div>
     </div>
-  );
+  )
 }

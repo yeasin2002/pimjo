@@ -1,3 +1,2 @@
-export * from "./statics-cards";
-export * from "./user-table";
-
+export * from './statics-cards'
+export * from './user-table'

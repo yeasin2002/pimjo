@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 const ShadowIcon = ({ className }: { className?: string }) => {
   return (
@@ -8,7 +8,7 @@ const ShadowIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn('', className)}
     >
       <path
         fillRule="evenodd"
@@ -23,7 +23,7 @@ const ShadowIcon = ({ className }: { className?: string }) => {
         fill="#9CA3AF"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default ShadowIcon;
+export default ShadowIcon

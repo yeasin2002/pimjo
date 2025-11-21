@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 function ArrowRight({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ function ArrowRight({ className }: { className?: string }) {
       viewBox="0 0 15 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn('', className)}
     >
       <path
         d="M14.0845 5.74715L0.75 5.74715M9.08781 0.75L14.0845 5.74984L9.08781 10.75"
@@ -18,7 +18,7 @@ function ArrowRight({ className }: { className?: string }) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
 
-export default ArrowRight;
+export default ArrowRight

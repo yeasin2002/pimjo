@@ -42,8 +42,8 @@ async function seed() {
         email: 'user@example.com',
         age: 25,
         name: 'User',
-      }
-    ]);
+      },
+    ])
 
     console.log('✅ Database seeding completed successfully!')
   } catch (error) {

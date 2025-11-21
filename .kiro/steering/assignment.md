@@ -3,6 +3,7 @@
 ## 🎯 Project Overview
 
 This is a **Front-End Developer Assessment** project building a fully functional application with:
+
 - **Landing Page** with dynamic header menu
 - **Authentication System** (Sign In/Sign Up)
 - **Dashboard** with user management
@@ -16,6 +17,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ## 📋 Core Requirements
 
 ### 1. Landing Page
+
 - **Pixel-perfect implementation** of Figma design
 - Fully responsive across all devices
 - Include all animations, hover states, and transitions
@@ -26,6 +28,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ### 2. Authentication Pages
 
 #### Sign In Page
+
 - Match Figma design exactly
 - Form validation with proper error states
 - Redirect to dashboard after successful login
@@ -34,11 +37,13 @@ This is a **Front-End Developer Assessment** project building a fully functional
   - Password: `demopass123`
 
 #### Sign Up Page
+
 - Match Figma design exactly
 - Form validation with proper error states
 - Redirect to dashboard after successful registration
 
 #### Authentication Implementation
+
 - Use **better-auth** (already configured in `src/lib/auth.ts`)
 - Leverage Next.js 16 App Router
 - Secure routes with middleware (already in `src/middleware.ts`)
@@ -49,6 +54,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ### 3. Dashboard Page
 
 #### Users Table
+
 - Fetch users from: `GET https://69102d7545e65ab24ac5d435.mockapi.io/users`
 - Display **5 users per page** with client-side pagination
 - Implement **client-side search** (filter by name or email)
@@ -58,6 +64,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
   - Update UI after successful deletion
 
 #### UI States
+
 - Loading states during data fetching
 - Empty states when no users found
 - Error states with retry options
@@ -70,6 +77,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ### API Integration
 
 #### Header Menu API
+
 ```typescript
 // Endpoint: GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
 // Fetch in Server Component or use client-side fetching
@@ -77,6 +85,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ```
 
 #### Users API
+
 ```typescript
 // GET https://69102d7545e65ab24ac5d435.mockapi.io/users
 // DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
@@ -87,12 +96,14 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ### Authentication Flow
 
 #### Current Setup
+
 - **better-auth** configured in `src/lib/auth.ts`
 - Middleware protection in `src/middleware.ts`
 - Auth routes: `/sign-in`, `/sign-up`
 - Protected route: `/dashboard`
 
 #### Required Flow
+
 1. Unauthenticated users → Redirect to `/sign-in`
 2. Sign in with test credentials → Redirect to `/dashboard`
 3. Authenticated users accessing auth pages → Redirect to `/dashboard`
@@ -101,11 +112,13 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ### Component Structure
 
 #### Existing Components
+
 - `src/components/auth/sign-in-form.tsx` - Sign in form
 - `src/components/shared/home-navbar.tsx` - Landing page navbar
 - `src/components/ui/*` - shadcn/ui components
 
 #### Required Components
+
 - Landing page sections (hero, features, etc.)
 - Dynamic header menu component
 - Sign up form component
@@ -121,18 +134,21 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ## 🎨 Design & UX Requirements
 
 ### Pixel-Perfect Implementation
+
 - Match Figma spacing, typography, and colors exactly
 - Use Tailwind CSS classes for styling
 - Maintain design consistency across all pages
 - Implement all micro-interactions from design
 
 ### Responsive Design
+
 - Mobile-first approach
 - Test on multiple screen sizes
 - Ensure touch-friendly interactions on mobile
 - Maintain visual hierarchy on all devices
 
 ### Accessibility
+
 - Semantic HTML elements
 - Proper ARIA labels
 - Keyboard navigation support
@@ -141,6 +157,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 - Color contrast compliance
 
 ### Performance
+
 - Optimize images (use next/image)
 - Minimize unnecessary re-renders
 - Efficient API calls (avoid redundant fetches)
@@ -152,6 +169,7 @@ This is a **Front-End Developer Assessment** project building a fully functional
 ## 📁 Project Structure
 
 ### Current Structure
+
 ```
 src/
 ├── app/
@@ -204,6 +222,7 @@ src/
 ```
 
 ### Required Additions
+
 ```
 src/
 ├── components/
@@ -227,6 +246,7 @@ src/
 ## ✅ Implementation Checklist
 
 ### Landing Page
+
 - [x] Implement hero section matching Figma
 - [x] Fetch and render dynamic header menu
 - [x] Add all sections from design (Hero, Analytics, Features, Testimonials, Newsletter, Footer)
@@ -235,6 +255,7 @@ src/
 - [x] Test all interactive elements
 
 ### Authentication
+
 - [x] Build sign-in page matching Figma
 - [ ] Build sign-up page matching Figma ⚠️ **HIGH PRIORITY**
 - [x] Implement basic form validation
@@ -244,6 +265,7 @@ src/
 - [x] Test redirect logic (working)
 
 ### Dashboard
+
 - [x] Create dashboard layout
 - [ ] Fetch and display users from API ⚠️ **HIGH PRIORITY** (currently static data)
 - [ ] Implement pagination (5 per page) ⚠️ **HIGH PRIORITY** (UI exists, needs logic)
@@ -255,6 +277,7 @@ src/
 - [ ] Test all CRUD operations
 
 ### Quality Assurance
+
 - [ ] Pixel-perfect match with Figma ⚠️ **NEEDS REVIEW**
 - [x] Responsive on all devices (basic done)
 - [ ] Accessibility compliance ⚠️ **NEEDS REVIEW**
@@ -269,6 +292,7 @@ src/
 ## 🎯 Next Steps Priority
 
 ### 🔴 Critical (Must Complete)
+
 1. **Integrate Users API** - Replace static data with real API calls
 2. **Implement Client-Side Pagination** - 5 users per page
 3. **Implement Search/Filter** - Filter by name or email
@@ -276,6 +300,7 @@ src/
 5. **Build Sign-Up Page** - Match Figma design
 
 ### 🟡 Important (Should Complete)
+
 6. Add loading states for all async operations
 7. Add empty states when no data
 8. Add error states with retry options
@@ -283,6 +308,7 @@ src/
 10. Add success feedback for actions
 
 ### 🟢 Nice to Have
+
 11. Add animations and micro-interactions
 12. Optimize performance
 13. Add comprehensive comments
@@ -293,18 +319,21 @@ src/
 ## 🚫 Important Constraints
 
 ### Code Originality
+
 - **No AI coding tools** (Copilot, Cursor, etc.)
 - Code will be reviewed for originality
 - Focus on demonstrating understanding
 - Write clean, maintainable code
 
 ### Design Fidelity
+
 - Must match Figma exactly
 - All text, spacing, and colors consistent
 - Include all micro-interactions
 - Maintain design system
 
 ### Best Practices
+
 - Follow Next.js 16 conventions
 - Use Server/Client Components appropriately
 - Implement proper error boundaries
@@ -316,12 +345,14 @@ src/
 ## 📦 Deliverables
 
 ### GitHub Repository
+
 - Complete project code
 - Clear commit history
 - Proper .gitignore
 - No sensitive data in commits
 
 ### README.md
+
 - Setup instructions (`npm install`, `npm run dev`)
 - Environment variables setup
 - Test credentials
@@ -330,12 +361,14 @@ src/
 - Known issues or assumptions
 
 ### Deployment
+
 - Live URL (Vercel/Netlify preferred)
 - Working authentication
 - All features functional
 - Responsive on all devices
 
 ### Submission
+
 - Public repo link OR
 - Private repo with access for: `musharofchy` and `said7388`
 
@@ -344,12 +377,14 @@ src/
 ## 🎯 Evaluation Focus
 
 ### Priority 1: UI Accuracy
+
 - Pixel-perfect Figma match
 - Responsive design
 - All animations and transitions
 - Consistent spacing and typography
 
 ### Priority 2: Functionality
+
 - Working authentication flow
 - Dynamic data fetching
 - Pagination and search
@@ -357,6 +392,7 @@ src/
 - Proper error handling
 
 ### Priority 3: Code Quality
+
 - Clean, readable code
 - Proper component structure
 - TypeScript usage
@@ -364,6 +400,7 @@ src/
 - Accessibility compliance
 
 ### Priority 4: Attention to Detail
+
 - Loading states
 - Empty states
 - Error messages
@@ -375,6 +412,7 @@ src/
 ## 💡 Development Tips
 
 ### Getting Started
+
 1. Study Figma design thoroughly
 2. Set up test credentials in database
 3. Test authentication flow first
@@ -382,6 +420,7 @@ src/
 5. Test responsiveness continuously
 
 ### API Integration
+
 - Create custom hooks for data fetching
 - Implement proper error handling
 - Add loading states
@@ -389,12 +428,14 @@ src/
 - Handle edge cases (empty data, errors)
 
 ### State Management
+
 - Use React hooks for local state
 - Consider URL state for pagination/search
 - Implement optimistic updates for better UX
 - Handle loading and error states
 
 ### Testing Strategy
+
 - Test authentication flow thoroughly
 - Verify all API integrations
 - Test responsive design on multiple devices
@@ -406,6 +447,7 @@ src/
 ## 📊 Current Implementation Details
 
 ### Landing Page ✅
+
 - **Status**: Fully implemented and functional
 - **Components**: Hero, Analytics Overview, Why Choose Us, Template Showcase, Testimonials, Newsletter, Footer
 - **Dynamic Menu**: Successfully fetching from `https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu`
@@ -413,6 +455,7 @@ src/
 - **Location**: `src/app/page.tsx` + `src/feature/homepage/*`
 
 ### Authentication System ✅ (Partial)
+
 - **Sign In**: Fully functional with email/password and OAuth (GitHub, Google)
   - Location: `src/app/(auth)/sign-in/page.tsx`
   - Form: `src/components/auth/sign-in-form.tsx`
@@ -426,6 +469,7 @@ src/
   - Location: `src/middleware.ts`
 
 ### Dashboard 🚧 (Needs Work)
+
 - **Layout**: Basic structure complete
   - Location: `src/app/dashboard/page.tsx`
   - Components: `src/feature/dashboard/*`
@@ -440,6 +484,7 @@ src/
   - Delete functionality not implemented
 
 ### What's Working
+
 1. ✅ Dynamic header menu from API
 2. ✅ Authentication flow (sign in only)
 3. ✅ Route protection with middleware
@@ -448,6 +493,7 @@ src/
 6. ✅ OAuth integration (GitHub, Google)
 
 ### What Needs Implementation
+
 1. ⚠️ **Sign Up page** - Match Figma design
 2. ⚠️ **Users API integration** - Replace static data
 3. ⚠️ **Client-side pagination** - 5 users per page

@@ -1,4 +1,4 @@
-import { HomeNavbar } from "@/components/shared";
+import { HomeNavbar } from '@/components/shared'
 import {
   AnalyticsOverview,
   Footer,
@@ -7,7 +7,7 @@ import {
   TemplateShowcase,
   TestimonialSection,
   WhyChooseUsSimple,
-} from "@/feature/homepage";
+} from '@/feature/homepage'
 
 const RootPage = async () => {
   return (
@@ -21,7 +21,7 @@ const RootPage = async () => {
       <NewsLetter />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default RootPage;
+export default RootPage

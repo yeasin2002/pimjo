@@ -1,9 +1,9 @@
-import Logo from "@/assets/icons/Logo.svg";
-import Link from "next/link";
+import Logo from '@/assets/icons/Logo.svg'
+import Link from 'next/link'
 
 export function SignInHeader() {
   return (
-    <div className="text-center space-y-4 mb-8">
+    <div className="mb-8 space-y-4 text-center">
       <div className="flex items-center justify-center">
         <Link href="/">
           <Logo />
@@ -11,16 +11,16 @@ export function SignInHeader() {
       </div>
 
       {/* Heading */}
-      <h1 className="text-3xl font-semibold text-[#1F2937] tracking-tight">
+      <h1 className="text-3xl font-semibold tracking-tight text-[#1F2937]">
         Sign In to your account
       </h1>
 
       {/* Subtitle */}
-      <p className="text-[#6B7280] text-base leading-relaxed">
+      <p className="text-base leading-relaxed text-[#6B7280]">
         Unlock exclusive access to premium components
         <br />
         and design resources.
       </p>
     </div>
-  );
+  )
 }

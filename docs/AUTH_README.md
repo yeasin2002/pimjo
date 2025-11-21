@@ -26,10 +26,12 @@ BETTER_AUTH_URL=http://localhost:3000
 ### 2. OAuth Setup
 
 **GitHub OAuth:**
+
 - Create app at: https://github.com/settings/developers
 - Callback URL: `http://localhost:3000/api/auth/callback/github`
 
 **Google OAuth:**
+
 - Create credentials at: https://console.cloud.google.com/apis/credentials
 - Callback URL: `http://localhost:3000/api/auth/callback/google`
 
@@ -38,39 +40,39 @@ BETTER_AUTH_URL=http://localhost:3000
 ### Client Components
 
 ```tsx
-import { useSession, signIn, signOut } from "@/lib/auth-client";
+import { useSession, signIn, signOut } from '@/lib/auth-client'
 
 function MyComponent() {
-  const { data: session } = useSession();
-  
+  const { data: session } = useSession()
+
   // Email sign in
-  await signIn.email({ email, password });
-  
+  await signIn.email({ email, password })
+
   // Social sign in
-  await signIn.social({ provider: "google" });
-  await signIn.social({ provider: "github" });
-  
+  await signIn.social({ provider: 'google' })
+  await signIn.social({ provider: 'github' })
+
   // Sign out
-  await signOut();
+  await signOut()
 }
 ```
 
 ### Server Components
 
 ```tsx
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+import { auth } from '@/lib/auth'
+import { headers } from 'next/headers'
 
 async function MyServerComponent() {
   const session = await auth.api.getSession({
     headers: await headers(),
-  });
-  
+  })
+
   if (!session) {
-    return <div>Not authenticated</div>;
+    return <div>Not authenticated</div>
   }
-  
-  return <div>Welcome {session.user.name}</div>;
+
+  return <div>Welcome {session.user.name}</div>
 }
 ```
 
@@ -82,6 +84,7 @@ async function MyServerComponent() {
 ## Database Schema
 
 Better-auth manages these tables:
+
 - `user` - User accounts
 - `session` - Active sessions
 - `account` - OAuth accounts & passwords
@@ -90,6 +93,7 @@ Better-auth manages these tables:
 ## API Endpoints
 
 All routes available at `/api/auth/*`:
+
 - `/api/auth/sign-in/email` - Email sign in
 - `/api/auth/sign-up/email` - Email sign up
 - `/api/auth/sign-in/social` - OAuth (Google, GitHub)

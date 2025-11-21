@@ -1,8 +1,8 @@
-import Image from "next/image";
-import type { TemplateCard as TemplateCardType } from "./types";
+import Image from 'next/image'
+import type { TemplateCard as TemplateCardType } from './types'
 
 interface TemplateCardProps {
-  template: TemplateCardType;
+  template: TemplateCardType
 }
 
 export const TemplateCard = ({ template }: TemplateCardProps) => {
@@ -16,9 +16,9 @@ export const TemplateCard = ({ template }: TemplateCardProps) => {
         className="rounded-lg"
       />
       <div className="mt-6 space-y-2">
-        <h3 className="font-bold text-lg">{template.title}</h3>
-        <p className="text-gray-700 font-medium">{template.description}</p>
+        <h3 className="text-lg font-bold">{template.title}</h3>
+        <p className="font-medium text-gray-700">{template.description}</p>
       </div>
     </div>
-  );
-};
+  )
+}

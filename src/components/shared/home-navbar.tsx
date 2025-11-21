@@ -1,5 +1,5 @@
-import Logo from "@/assets/icons/Logo.svg";
-import { Button } from "@/components/ui/button";
+import Logo from '@/assets/icons/Logo.svg'
+import { Button } from '@/components/ui/button'
 
 import {
   NavigationMenu,
@@ -9,8 +9,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+} from '@/components/ui/navigation-menu'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import {
   BarChart,
   Disc,
@@ -23,50 +23,48 @@ import {
   ShoppingCart,
   Sparkles,
   X,
-} from "lucide-react";
-import Link from "next/link";
-import * as React from "react";
+} from 'lucide-react'
+import Link from 'next/link'
+import * as React from 'react'
 
 // Icon mapping
 const iconMap: Record<string, React.ElementType> = {
   layout: Layout,
-  "bar-chart": BarChart,
+  'bar-chart': BarChart,
   sparkles: Sparkles,
   megaphone: Megaphone,
-  "shopping-cart": ShoppingCart,
+  'shopping-cart': ShoppingCart,
   grid: Grid,
-};
+}
 
 interface NavItem {
-  id: string;
-  label: string;
-  type?: "mega";
-  href?: string;
+  id: string
+  label: string
+  type?: 'mega'
+  href?: string
   columns?: {
-    title: string;
-    description: string;
-    icon: string;
-    href: string;
-  }[];
+    title: string
+    description: string
+    icon: string
+    href: string
+  }[]
 }
 
 async function getMenuData() {
   try {
-    const res = await fetch(
-      "https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu"
-    );
-    if (!res.ok) throw new Error("Failed to fetch menu data");
-    return res.json() as Promise<NavItem[]>;
+    const res = await fetch('https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu')
+    if (!res.ok) throw new Error('Failed to fetch menu data')
+    return res.json() as Promise<NavItem[]>
   } catch (error) {
-    console.error("Error fetching menu:", error);
-    return [];
+    console.error('Error fetching menu:', error)
+    return []
   }
 }
 
 export async function HomeNavbar() {
-  const items = await getMenuData();
+  const items = await getMenuData()
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
       <div className="container mx-auto flex h-16 items-center px-4">
         <Logo />
 
@@ -76,33 +74,31 @@ export async function HomeNavbar() {
             <NavigationMenuList>
               {items.map((item) => (
                 <NavigationMenuItem key={item.id}>
-                  {item.type === "mega" ? (
+                  {item.type === 'mega' ? (
                     <>
-                      <NavigationMenuTrigger>
-                        {item.label}
-                      </NavigationMenuTrigger>
+                      <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                           {item.columns?.map((col) => {
-                            const Icon = iconMap[col.icon] || Grid;
+                            const Icon = iconMap[col.icon] || Grid
                             return (
                               <li key={col.title}>
                                 <NavigationMenuLink asChild>
                                   <Link
                                     href={col.href}
-                                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                    className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
                                   >
-                                    <div className="flex items-center gap-2 text-sm font-medium leading-none">
-                                      <Icon className="h-4 w-4 text-muted-foreground" />
+                                    <div className="flex items-center gap-2 text-sm leading-none font-medium">
+                                      <Icon className="text-muted-foreground h-4 w-4" />
                                       {col.title}
                                     </div>
-                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground pl-6">
+                                    <p className="text-muted-foreground line-clamp-2 pl-6 text-sm leading-snug">
                                       {col.description}
                                     </p>
                                   </Link>
                                 </NavigationMenuLink>
                               </li>
-                            );
+                            )
                           })}
                         </ul>
                       </NavigationMenuContent>
@@ -110,7 +106,7 @@ export async function HomeNavbar() {
                   ) : (
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
-                      href={item.href || "#"}
+                      href={item.href || '#'}
                     >
                       {item.label}
                     </NavigationMenuLink>
@@ -124,40 +120,28 @@ export async function HomeNavbar() {
         {/* Right Side Actions */}
         <div className="flex items-center gap-4">
           <div className="relative hidden lg:block">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Search className="text-muted-foreground absolute top-2.5 left-2.5 h-4 w-4" />
             <input
               type="text"
               placeholder="Quick search..."
-              className="h-9 w-64 rounded-md border border-input bg-background pl-9 pr-12 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="border-input bg-background focus-visible:ring-ring h-9 w-64 rounded-md border pr-12 pl-9 text-sm shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-none"
             />
-            <div className="absolute right-2 top-2 flex h-5 items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <div className="bg-muted text-muted-foreground absolute top-2 right-2 flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
               <span className="text-xs">⌘</span>K
             </div>
           </div>
 
           {/* Social Icons */}
           <div className="hidden items-center gap-1 sm:flex">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9 text-muted-foreground"
-            >
+            <Button variant="ghost" size="icon" className="text-muted-foreground h-9 w-9">
               <X className="h-4 w-4" />
               <span className="sr-only">Twitter</span>
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9 text-muted-foreground"
-            >
+            <Button variant="ghost" size="icon" className="text-muted-foreground h-9 w-9">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9 text-muted-foreground"
-            >
+            <Button variant="ghost" size="icon" className="text-muted-foreground h-9 w-9">
               <Disc className="h-4 w-4" />
               <span className="sr-only">Discord</span>
             </Button>
@@ -167,11 +151,11 @@ export async function HomeNavbar() {
           <div className="hidden items-center gap-4 md:flex">
             <Link
               href="/sign-in"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground text-sm font-medium"
             >
               Sign in
             </Link>
-            <Button variant={"secondary"}>Pricing & FAQ</Button>
+            <Button variant={'secondary'}>Pricing & FAQ</Button>
           </div>
 
           {/* Mobile Menu */}
@@ -192,40 +176,40 @@ export async function HomeNavbar() {
                 </div>
                 <div className="px-2">
                   <div className="relative">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Search className="text-muted-foreground absolute top-2.5 left-2.5 h-4 w-4" />
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="h-9 w-full rounded-md border border-input bg-background pl-9 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                      className="border-input bg-background focus-visible:ring-ring h-9 w-full rounded-md border pl-9 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none"
                     />
                   </div>
                 </div>
                 <nav className="flex flex-col gap-2">
                   {items.map((item) => (
                     <div key={item.id} className="flex flex-col gap-2">
-                      {item.type === "mega" ? (
+                      {item.type === 'mega' ? (
                         <div className="px-2 py-1">
                           <div className="mb-2 font-semibold">{item.label}</div>
                           <div className="grid gap-2 pl-2">
                             {item.columns?.map((col) => {
-                              const Icon = iconMap[col.icon] || Grid;
+                              const Icon = iconMap[col.icon] || Grid
                               return (
                                 <Link
                                   key={col.title}
                                   href={col.href}
-                                  className="flex items-center gap-2 rounded-md p-2 text-sm hover:bg-accent"
+                                  className="hover:bg-accent flex items-center gap-2 rounded-md p-2 text-sm"
                                 >
-                                  <Icon className="h-4 w-4 text-muted-foreground" />
+                                  <Icon className="text-muted-foreground h-4 w-4" />
                                   {col.title}
                                 </Link>
-                              );
+                              )
                             })}
                           </div>
                         </div>
                       ) : (
                         <Link
-                          href={item.href || "#"}
-                          className="rounded-md px-2 py-2 text-sm font-medium hover:bg-accent"
+                          href={item.href || '#'}
+                          className="hover:bg-accent rounded-md px-2 py-2 text-sm font-medium"
                         >
                           {item.label}
                         </Link>
@@ -237,7 +221,7 @@ export async function HomeNavbar() {
                   <Link href="/sign-in" className="text-sm font-medium">
                     Sign in
                   </Link>
-                  <Button variant={"secondary"}>Pricing & FAQ</Button>
+                  <Button variant={'secondary'}>Pricing & FAQ</Button>
                 </div>
               </div>
             </SheetContent>
@@ -245,5 +229,5 @@ export async function HomeNavbar() {
         </div>
       </div>
     </header>
-  );
+  )
 }

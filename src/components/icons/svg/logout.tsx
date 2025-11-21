@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 function LogoutIcon({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ function LogoutIcon({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn('', className)}
     >
       <g filter="url(#filter0_i_16106_20667)">
         <path
@@ -30,12 +30,7 @@ function LogoutIcon({ className }: { className?: string }) {
           color-interpolation-filters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -49,15 +44,11 @@ function LogoutIcon({ className }: { className?: string }) {
             type="matrix"
             values="0 0 0 0 0.121569 0 0 0 0 0.160784 0 0 0 0 0.215686 0 0 0 0.2 0"
           />
-          <feBlend
-            mode="normal"
-            in2="shape"
-            result="effect1_innerShadow_16106_20667"
-          />
+          <feBlend mode="normal" in2="shape" result="effect1_innerShadow_16106_20667" />
         </filter>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default LogoutIcon;
+export default LogoutIcon

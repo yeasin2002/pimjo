@@ -1,20 +1,11 @@
-import RattingStarIcon from "@/components/icons/svg/rating-star";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Testimonial } from "./testimonials.data";
+import RattingStarIcon from '@/components/icons/svg/rating-star'
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { Testimonial } from './testimonials.data'
 
-export const TestimonialCard = ({
-  testimonial,
-}: {
-  testimonial: Testimonial;
-}) => {
+export const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div
-      className={cn(
-        "bg-white rounded-2xl p-10 border border-gray-200",
-        testimonial.gridClass
-      )}
-    >
+    <div className={cn('rounded-2xl border border-gray-200 bg-white p-10', testimonial.gridClass)}>
       {/* User Info */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3.5">
@@ -55,5 +46,5 @@ export const TestimonialCard = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}

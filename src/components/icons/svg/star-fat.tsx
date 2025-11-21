@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 const StarFatIcon = ({ className }: { className?: string }) => {
   return (
@@ -8,7 +8,7 @@ const StarFatIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("", className)}
+      className={cn('', className)}
     >
       <g clipPath="url(#clip0_14604_22711)">
         <path
@@ -24,7 +24,7 @@ const StarFatIcon = ({ className }: { className?: string }) => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default StarFatIcon;
+export default StarFatIcon

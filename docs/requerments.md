@@ -24,9 +24,7 @@ All pages and components **must strictly follow the provided Figma design**:
 - Ensure the layout is fully **responsive** and visually consistent.
 - Include all animations, hover states, and transitions from the design.
 - **Header navigation menu** — dynamically fetched from:
-    
-    `GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu`
-    
+  `GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu`
 
 ---
 
@@ -34,9 +32,9 @@ All pages and components **must strictly follow the provided Figma design**:
 
 - Build both **Sign In** and **Sign Up** pages based on the design.
 - Implement **authentication logic** using **Next.js 16 best practices**:
-    - Use the **App Router**.
-    - Secure pages with **middleware**.
-    - Manage sessions or tokens efficiently (`NextAuth` or custom logic.)
+  - Use the **App Router**.
+  - Secure pages with **middleware**.
+  - Manage sessions or tokens efficiently (`NextAuth` or custom logic.)
 - Include form validation, error states, and redirect logic after login/signup.
 
 ---
@@ -45,16 +43,12 @@ All pages and components **must strictly follow the provided Figma design**:
 
 - After login, users should be redirected to the **Dashboard**.
 - The dashboard must include:
-    - **Users table** — fetched from:
-        
-        `GET https://69102d7545e65ab24ac5d435.mockapi.io/users`
-        
-    - Display **5 users per page** with **client-side pagination**.
-    - Implement **client-side search** (optional: filter by name or email).
-    - Enable **delete user** functionality via:
-        
-        `DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id`
-        
+  - **Users table** — fetched from:
+    `GET https://69102d7545e65ab24ac5d435.mockapi.io/users`
+  - Display **5 users per page** with **client-side pagination**.
+  - Implement **client-side search** (optional: filter by name or email).
+  - Enable **delete user** functionality via:
+    `DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id`
 - Add proper loading states, empty states, and error handling.
 
 ---
@@ -71,14 +65,14 @@ All pages and components **must strictly follow the provided Figma design**:
 
 ### 🧩 Functional Expectations
 
-| Feature | Description |
-| --- | --- |
-| **Landing Page** | Matches Figma pixel-for-pixel, responsive, accessible |
-| **Auth Pages** | Functional, validated, and secured authentication flow (use auth.js) |
-| **Dashboard** | Dynamic data rendering, pagination, search, and delete |
-| **Header Menu** | Fetched from API, dynamically rendered |
-| **UX/UI** | Smooth transitions, consistent spacing, and responsive layouts |
-| **Code Quality** | Clean, reusable, and modular components |
+| Feature          | Description                                                          |
+| ---------------- | -------------------------------------------------------------------- |
+| **Landing Page** | Matches Figma pixel-for-pixel, responsive, accessible                |
+| **Auth Pages**   | Functional, validated, and secured authentication flow (use auth.js) |
+| **Dashboard**    | Dynamic data rendering, pagination, search, and delete               |
+| **Header Menu**  | Fetched from API, dynamically rendered                               |
+| **UX/UI**        | Smooth transitions, consistent spacing, and responsive layouts       |
+| **Code Quality** | Clean, reusable, and modular components                              |
 
 ---
 
@@ -96,11 +90,11 @@ All pages and components **must strictly follow the provided Figma design**:
 ### 📦 Deliverables
 
 - A **GitHub repository** with:
-    - The complete project code.
-    - A short **README** including:
-        - Setup and run instructions (`npm install`, `npm run dev`)
-        - Description of your approach and structure.
-        - Any assumptions or known issues.
+  - The complete project code.
+  - A short **README** including:
+    - Setup and run instructions (`npm install`, `npm run dev`)
+    - Description of your approach and structure.
+    - Any assumptions or known issues.
 - Deployed live version URL (preferably on **Vercel or Netlify**).
 
 ## 🔑 Test Login Access:
@@ -119,15 +113,15 @@ Submit your assignment through a **GitHub repository**. You can either share a *
 
 ### 🧾 Evaluation Criteria
 
-| Criteria | Description |
-| --- | --- |
-| **UI Accuracy** | Pixel-perfect match with Figma |
-| **Code Quality** | Clean, structured, and maintainable code |
-| **Next.js Practices** | Proper usage of Next.js 16 App Router & conventions |
-| **Functionality** | Auth, data fetching, pagination, search, and delete |
-| **Performance** | Optimized API usage and rendering |
-| **UX/UI Consistency** | Smooth, responsive, and accessible experience |
-| **Attention to Detail** | Micro-interactions, responsiveness, loading states |
+| Criteria                | Description                                         |
+| ----------------------- | --------------------------------------------------- |
+| **UI Accuracy**         | Pixel-perfect match with Figma                      |
+| **Code Quality**        | Clean, structured, and maintainable code            |
+| **Next.js Practices**   | Proper usage of Next.js 16 App Router & conventions |
+| **Functionality**       | Auth, data fetching, pagination, search, and delete |
+| **Performance**         | Optimized API usage and rendering                   |
+| **UX/UI Consistency**   | Smooth, responsive, and accessible experience       |
+| **Attention to Detail** | Micro-interactions, responsiveness, loading states  |
 
 ---
 
