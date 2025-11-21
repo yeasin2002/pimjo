@@ -7,21 +7,25 @@ A full-stack application featuring authentication, dynamic content management, a
 ## 🛠️ Tech Stack
 
 ### **Core**
+
 - ⚡ **Next.js 15** - App Router & Server Components
 - 🔷 **TypeScript 5.8** - Strict type safety
 - ⚛️ **React 19** - Latest features
 
 ### **UI & Styling**
+
 - 🎯 **Tailwind CSS** - Utility-first styling
 - 🧩 **shadcn/ui** - Radix UI components
 - 🎭 **Lucide React** - Icon library
 
 ### **Backend & Database**
+
 - 🐘 **Drizzle ORM** - Type-safe database queries
 - 🗄️ **PostgreSQL** - Primary database
 - 🔐 **better-auth** - Authentication management
 
 ### **Development Tools**
+
 - 🎯 **ESLint** - Code linting
 - 💅 **Prettier** - Code formatting
 - 🧪 **Vitest** - Unit testing
@@ -30,6 +34,7 @@ A full-stack application featuring authentication, dynamic content management, a
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - **Node.js 18+** or Bun
 - **PostgreSQL** database
 - Git
@@ -76,6 +81,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 ## 📜 Available Scripts
 
 ### 🔧 **Development**
+
 ```bash
 npm run setup        # Quick project setup
 npm run dev          # Start development server
@@ -86,6 +92,7 @@ npm run clean        # Clean build artifacts
 ```
 
 ### 🗄️ **Database**
+
 ```bash
 npm run db:generate  # Generate database migrations
 npm run db:migrate   # Apply database migrations
@@ -94,6 +101,7 @@ npm run db:seed      # Seed database with sample data
 ```
 
 ### 🧪 **Testing**
+
 ```bash
 npm run test         # Run unit tests
 npm run test:watch   # Run tests in watch mode
@@ -103,6 +111,7 @@ npm run test:e2e:ui  # Run E2E tests with UI
 ```
 
 ### 💅 **Code Quality**
+
 ```bash
 npm run lint         # Run ESLint
 npm run lint:fix     # Fix ESLint issues automatically
@@ -110,7 +119,19 @@ npm run format       # Format code with Prettier
 npm run format:check # Check code formatting
 npm run knip         # Check for unused code
 npm run codehawk     # Analyze code quality
+npm run prepare      # Setup Husky hooks
 ```
+
+### 🪝 **Git Hooks (Husky)**
+
+Pre-commit hooks automatically run on every commit:
+
+- ESLint fixes and checks
+- Prettier formatting
+- TypeScript type checking
+- Only on staged files (fast!)
+
+See [HUSKY_SETUP.md](HUSKY_SETUP.md) for detailed configuration.
 
 <!-- ### 🐳 **Docker**
 ```bash
@@ -125,12 +146,14 @@ npm run docker:test  # Run test container (Linux/Mac)
 ``` -->
 
 ### 📚 **Storybook**
+
 ```bash
 npm run storybook       # Start Storybook dev server
 npm run build-storybook # Build Storybook for production
 ```
 
 ### 📊 **Analysis**
+
 ```bash
 npm run analyze      # Analyze bundle size
 ```
@@ -165,6 +188,7 @@ npm run analyze      # Analyze bundle size
 ```
 
 ### Key Files
+
 - `src/middleware.ts` - Route protection and authentication guards
 - `src/lib/auth.ts` - better-auth server configuration
 - `src/lib/auth-client.ts` - Client-side auth utilities
@@ -209,15 +233,17 @@ GOOGLE_CLIENT_SECRET="your-google-client-secret"
 ### Authentication Setup
 
 The project uses **better-auth** with:
+
 - Email/password authentication
 - GitHub OAuth (optional)
 - Google OAuth (optional)
 - Session-based authentication
-- Middleware route protection 
+- Middleware route protection
 
 ## 📋 API Endpoints
 
 ### ✅ Integrated
+
 ```typescript
 // Dynamic Menu
 GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
@@ -225,6 +251,7 @@ GET https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu
 ```
 
 ### ⏳ Pending Integration
+
 ```typescript
 // Users List
 GET https://69102d7545e65ab24ac5d435.mockapi.io/users
@@ -238,6 +265,7 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 ## 🎯 Development Roadmap
 
 ### Phase 1: Critical Features (Current Focus)
+
 - [ ] Integrate Users API in dashboard
 - [ ] Implement client-side pagination (5 per page)
 - [ ] Add search/filter functionality
@@ -245,6 +273,7 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 - [ ] Complete sign-up page
 
 ### Phase 2: Polish & Quality
+
 - [ ] Add loading states for all async operations
 - [ ] Add empty states for no data scenarios
 - [ ] Improve error handling with retry options
@@ -252,6 +281,7 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 - [ ] Add comprehensive form validation
 
 ### Phase 3: Testing & Optimization
+
 - [ ] Test authentication flow end-to-end
 - [ ] Test pagination and search
 - [ ] Performance optimization
@@ -261,6 +291,7 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Push code to GitHub
 2. Import project in Vercel
 3. Add environment variables:
@@ -271,6 +302,7 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 4. Deploy
 
 ### Manual Deployment
+
 ```bash
 # Build for production
 npm run build
@@ -289,6 +321,7 @@ npm run start
 ## 📚 Documentation
 
 For detailed implementation guidance, see:
+
 - `.kiro/steering/current-status.md` - Current project status
 - `.kiro/steering/assignment.md` - Assignment requirements
 - `.kiro/steering/tech.md` - Tech stack details
@@ -306,5 +339,3 @@ For detailed implementation guidance, see:
 
 **Project Type**: Front-End Developer Assessment (FED-11/25)  
 **Status**: In Development (~60% Complete)
-
-
