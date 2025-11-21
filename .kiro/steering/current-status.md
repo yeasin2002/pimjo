@@ -315,15 +315,6 @@ DELETE https://69102d7545e65ab24ac5d435.mockapi.io/users/:id
 - [ ] Add TypeScript types for Menu data
 - [ ] Add error boundaries for React components
 - [ ] Add loading error handling
-- [ ] Add comments for complex logic
-
-### Testing
-
-- [ ] Test authentication flow end-to-end
-- [ ] Test pagination with different data sizes
-- [ ] Test search with various queries
-- [ ] Test delete operation
-- [ ] Test responsive design on multiple devices
 
 ---
 

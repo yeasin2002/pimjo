@@ -26,13 +26,6 @@
 
 ## Internationalization
 
-## Testing
-
-- **Vitest** for unit testing with jsdom environment
-- **Playwright** for E2E testing
-- **Testing Library** for React component testing
-- **Storybook** for component development and testing
-
 ## Code Quality
 
 - **ESLint** with Next.js, TypeScript, and Prettier configs
@@ -69,16 +62,6 @@ npm run db:studio    # Open Drizzle Studio
 npm run db:seed      # Seed database
 ```
 
-### Testing
-
-```bash
-npm run test         # Run unit tests
-npm run test:watch   # Run tests in watch mode
-npm run test:coverage # Run tests with coverage
-npm run test:e2e     # Run E2E tests
-npm run test:e2e:ui  # Run E2E tests with UI
-```
-
 ### Code Quality
 
 ```bash
@@ -106,11 +89,4 @@ npm run docker:build # Build Docker image
 npm run docker:dev   # Run development container
 npm run docker:prod  # Run production container
 npm run docker:test  # Run test container
-```
-
-### Storybook
-
-```bash
-npm run storybook       # Start Storybook dev server
-npm run build-storybook # Build Storybook
 ```

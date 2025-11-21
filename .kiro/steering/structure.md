@@ -84,19 +84,6 @@ src/
 - CSS variables for theming in HSL format
 - Component-specific styles using Tailwind
 
-### Testing
-
-- Unit tests alongside source files or in `src/test/`
-- E2E tests in `tests/e2e/`
-- Integration tests in `tests/integration/`
-- Test setup in `src/test/setup.ts`
-
-### Internationalization
-
-- Locale files in `src/i18n/locales/`
-- Route configuration in `src/i18n/routing.ts`
-- Use `[locale]` dynamic route for i18n pages
-
 ### Environment & Configuration
 
 - Environment variables validated in `src/env.ts`
