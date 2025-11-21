@@ -17,7 +17,7 @@ export const TestimonialSection = () => {
             <span className="font-medium text-[#374151]">loved by creators</span> worldwide.
           </>
         }
-        className="mt-0 border-t-0 text-center"
+        className="mt-0 border-t-0"
       />
 
       {/* Testimonials Grid */}

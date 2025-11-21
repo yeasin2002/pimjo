@@ -7,8 +7,8 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({
-  badgeText = 'Templates',
-  title = 'Ready-to-use Figma templates for building websites faster.',
+  badgeText = '',
+  title = '',
   subtitle = (
     <>
       Design and explore stunning website layouts with our{' '}

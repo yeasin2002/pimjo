@@ -19,9 +19,8 @@ export const TemplateGrid = ({ templates }: TemplateGridProps) => {
         {/* Gradient Overlay with Buttons */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 w-full bg-linear-to-t from-[#F3F4F6] via-white/90 to-white/20 opacity-90">
           <div className="relative mt-10 flex h-full w-full justify-center">
-            <div className="pointer-events-auto z-10 mt-11 flex items-center justify-center space-x-3 md:justify-start">
-              {/* Preview Button */}
-              <Button variant="outline" className="h-11 w-[140px] bg-white px-3.5 md:w-[191.64px]">
+            <div className="pointer-events-auto z-10 mt-11 flex items-center justify-center space-x-5 md:justify-start">
+              <Button variant={'outline'} size={'2xl'}>
                 <FigmaIcon className="size-6" />
                 <span className="flex items-center text-[#1F2937]">
                   Preview
@@ -30,9 +29,7 @@ export const TemplateGrid = ({ templates }: TemplateGridProps) => {
                   </span>
                 </span>
               </Button>
-
-              {/* Buy Now Button */}
-              <Button className="h-11 w-[140px] bg-blue-600 px-3.5 hover:bg-blue-700 md:w-[191.64px]">
+              <Button variant={'secondary'} size={'2xl'}>
                 Buy now
                 <span className="hidden items-center justify-center space-x-1 text-white/75 md:flex">
                   <span>- One-time</span>
