@@ -2,6 +2,18 @@
 
 A full-stack application featuring authentication, dynamic content management, and user dashboard built with Next.js 15, TypeScript, and modern web technologies.
 
+### Code Quality Analysis
+
+![avg-maintainability](/generated/avg-maintainability.svg)
+![worst-maintainability](/generated/worst-maintainability.svg)
+
+### Lighthouse Score
+
+![Performance](./badges/performance.svg)
+![Accessibility](./badges/accessibility.svg)
+![Best Practices](./badges/best-practices.svg)
+![SEO](./badges/seo.svg)
+
 **Figma Design**: [View Design](https://www.figma.com/design/g5DDrAT6qYIM4eqQm5r6tW/Front-end-developer-assessment)
 
 ## 🛠️ Tech Stack

@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["https://pimjo-olive.vercel.app/"]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended"
+    }
+  }
+}
