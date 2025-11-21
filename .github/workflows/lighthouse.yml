@@ -8,18 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Lighthouse CI
-        uses: foo-software/lighthouse-check-action@v12
+        uses: treosh/lighthouse-ci-action@v11
+        id: lighthouse
         with:
-          urls: 'https://pimjo-olive.vercel.app/'
-          outputDirectory: './lhci'
+          urls: |
+            https://pimjo-olive.vercel.app/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
-      - name: Create Badges
-        uses: emibcn/badges@v1
+      - name: Format lighthouse score
+        id: format_lighthouse_score
+        uses: actions/github-script@v7
         with:
-          label: 'Performance'
-          message: ${{ steps.lighthouse.outputs.performance }}
-          color: 'success'
-          path: './badges/performance.svg'
+          script: |
+            const results = ${{ steps.lighthouse.outputs.manifest }}
+            const links = ${{ steps.lighthouse.outputs.links }}
+
+            console.log('Lighthouse results:', results)
+            console.log('Lighthouse links:', links)
