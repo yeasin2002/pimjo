@@ -33,6 +33,7 @@ export const VersionNoticeTopBar = () => {
         <Button
           onClick={() => setIsVisible(false)}
           className="bg-sec hover:bg-sec mr-2 cursor-pointer"
+          aria-label="close"
         >
           <X className="size-5 cursor-pointer text-[#9CA3AF]" />
         </Button>
