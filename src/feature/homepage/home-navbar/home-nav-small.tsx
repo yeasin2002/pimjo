@@ -15,7 +15,7 @@ interface Props {
 export const HomeNavSmall = ({ items }: Props) => {
   const [open, setOpen] = useState(false)
   return (
-    <div className="ml-auto md:hidden">
+    <div className="ml-auto lg:hidden">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="h-9 w-9">

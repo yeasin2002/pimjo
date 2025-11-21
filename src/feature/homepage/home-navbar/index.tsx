@@ -11,7 +11,7 @@ export async function HomeNavbar() {
     <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
       <div className="container mx-auto flex h-16 items-center px-4">
         <Logo />
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <DesktopNavigation items={items} />
           <RightSideActions items={items} />
         </div>
