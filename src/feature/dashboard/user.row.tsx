@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
@@ -5,7 +6,6 @@ import { TableCell, TableRow } from '@/components/ui/table'
 import { cn } from '@/lib/utils'
 import { DashboardUser } from '@/types/dashboard'
 import { Trash2 } from 'lucide-react'
-import Image from 'next/image'
 
 interface UserTableRowProps {
   user: DashboardUser
@@ -25,7 +25,7 @@ export const UserTableRow = ({ user, onDelete }: UserTableRowProps) => {
       <TableCell className="px-6 py-3.5">
         <div className="flex items-center space-x-3">
           <div className="relative h-10 w-10 overflow-hidden rounded-full border">
-            <Image
+            <img
               className="absolute rounded-full object-cover p-0.5"
               // blurDataURL="LEHLh[WB2yk8pyoJadR*.7kCMdnj"
               // placeholder="blur"
