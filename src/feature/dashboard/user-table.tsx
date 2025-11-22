@@ -1,9 +1,9 @@
 'use client'
 
-import { DeleteUserDialog } from '@/components/dashboard/delete-user-dialog'
-import { EmptyState } from '@/components/dashboard/empty-state'
-import { ErrorState } from '@/components/dashboard/error-state'
-import { TableSkeleton } from '@/components/dashboard/table-skeleton'
+import { DeleteUserDialog } from '@/feature/dashboard/delete-user-dialog'
+import { EmptyState } from '@/feature/dashboard/empty-state'
+import { ErrorState } from '@/feature/dashboard/error-state'
+import { TableSkeleton } from '@/feature/dashboard/table-skeleton'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '@/components/ui/table'
