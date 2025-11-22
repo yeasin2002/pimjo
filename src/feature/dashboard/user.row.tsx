@@ -27,11 +27,13 @@ export const UserTableRow = ({ user, onDelete }: UserTableRowProps) => {
           <div className="relative h-10 w-10 overflow-hidden rounded-full border">
             <Image
               className="absolute rounded-full object-cover p-0.5"
-              blurDataURL="LEHLh[WB2yk8pyoJadR*.7kCMdnj"
-              placeholder="blur"
-              fill
+              // blurDataURL="LEHLh[WB2yk8pyoJadR*.7kCMdnj"
+              // placeholder="blur"
+              // fill
               alt={user.customer}
               src={user.avatar}
+              width={100}
+              height={100}
             />
           </div>
           <div className="space-y-0.5">
