@@ -18,14 +18,19 @@ import UesrIcon from '@/components/icons/svg/user-icon'
 
 import { signOut, useSession } from '@/lib/auth-client'
 import { cn } from '@/lib/utils'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export const DashboardNavLarage = () => {
   const [open, setOpen] = useState(false)
   const { data } = useSession()
-  const handleLogout = () => {
+  const router = useRouter()
+
+  const handleLogout = async () => {
     try {
-      signOut()
+      await signOut()
+      router.refresh()
+      return router.push('/sign-in')
     } catch (error) {
       console.log(error)
     }
