@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { TableCell, TableRow } from '@/components/ui/table'
+import { cn } from '@/lib/utils'
 import { DashboardUser } from '@/types/dashboard'
 import { Trash2 } from 'lucide-react'
 import Image from 'next/image'
@@ -12,20 +13,7 @@ interface UserTableRowProps {
 }
 
 export const UserTableRow = ({ user, onDelete }: UserTableRowProps) => {
-  // Generate status badge color based on status
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'complete':
-        return 'bg-green-100 text-green-800'
-      case 'in progress':
-        return 'bg-blue-100 text-blue-800'
-      case 'pending':
-        return 'bg-yellow-100 text-yellow-800'
-      default:
-        return 'bg-gray-100 text-gray-800'
-    }
-  }
-
+  console.log(user)
   return (
     <TableRow>
       <TableCell className="px-6 py-3.5">
@@ -39,11 +27,11 @@ export const UserTableRow = ({ user, onDelete }: UserTableRowProps) => {
           <div className="relative h-10 w-10 overflow-hidden rounded-full border">
             <Image
               className="absolute rounded-full object-cover p-0.5"
-              blurDataURL="L%SiHObFx{s:j^bIj?jryGjuRNWX"
+              blurDataURL="LEHLh[WB2yk8pyoJadR*.7kCMdnj"
               placeholder="blur"
               fill
               alt={user.customer}
-              src={user.avatar || `https://i.pravatar.cc/150?u=${user.dealId}`}
+              src={user.avatar}
             />
           </div>
           <div className="space-y-0.5">
@@ -61,7 +49,12 @@ export const UserTableRow = ({ user, onDelete }: UserTableRowProps) => {
       <TableCell className="px-6 py-3.5 text-sm text-[#667085]">{user.closeDate}</TableCell>
       <TableCell className="px-6 py-3.5">
         <span
-          className={`inline-flex rounded-full px-2.5 py-1 text-xs font-medium ${getStatusColor(user.status)}`}
+          className={cn(
+            `inline-flex rounded-full px-2.5 py-1 text-xs font-medium`,
+            user.status === 'Pending'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-green-100 text-green-800'
+          )}
         >
           {user.status}
         </span>
